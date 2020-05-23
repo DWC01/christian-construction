@@ -1,27 +1,19 @@
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Logo from './components/Logo';
+import Header from './components/layout/Header';
 
-const useStyles = makeStyles(theme => ({
-	headerContainer: {
-		marginTop: '60px',
-	},
+const useStyles = makeStyles(() => ({
+	root: {},
 }));
 
 const Layout = ({ children }) => {
 	const classes = useStyles();
 
 	return (
-		<>
-			<Container>
-				<div className={classes.headerContainer}>
-					<Logo />
-				</div>
-
-				{children}
-			</Container>
-		</>
+		<div className={classes.root}>
+			<Header />
+			{children}
+		</div>
 	);
 };
 

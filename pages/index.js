@@ -1,7 +1,20 @@
-import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import HeroImage from '../src/components/images/HeroImage';
+
+const useStyles = makeStyles(() => ({
+	heroImageContainer: {
+		marginTop: '30px',
+	},
+}));
 
 const Index = () => {
-	return <>{/* <img src="/jill-ed-hero.jpg" /> */}</>;
+	const classes = useStyles();
+
+	return (
+		<div className={classes.heroImageContainer}>
+			<HeroImage />
+		</div>
+	);
 };
 
 export default Index;

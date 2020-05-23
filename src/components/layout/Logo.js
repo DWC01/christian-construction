@@ -67,7 +67,6 @@ const Logo = () => {
 
 	return (
 		<div className={classes.logoContainer}>
-			<Typography className={classes.logoText}>Christian</Typography>
 			<div className={classes.cssLogoContainer}>
 				<div
 					className={`${classes.baseLineCss} ${classes.hoizontalLineBase} ${classes.topLine}`}
@@ -85,7 +84,9 @@ const Logo = () => {
 					<Typography className={classes.cc}>CC</Typography>
 				</div>
 			</div>
-			<Typography className={classes.logoText}>Construction</Typography>
+			<Typography className={classes.logoText}>
+				Christian Construction
+			</Typography>
 		</div>
 	);
 };
