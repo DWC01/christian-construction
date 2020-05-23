@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
@@ -13,9 +14,9 @@ export default class MyDocument extends Document {
 						name="theme-color"
 						content={theme.palette.primary.main}
 					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-						rel="stylesheet"
+					<meta
+						name="description"
+						content="Christian Construction is kitchen remodel firm"
 					/>
 				</Head>
 				<body>

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import '../src/theme/fonts.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
