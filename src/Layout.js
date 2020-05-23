@@ -10,19 +10,9 @@ const Layout = ({ children }) => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.parallax}>
-			<div
-				className={`${classes.parallaxLayer} ${classes.parallaxLayerBack}`}
-			>
-				<div className={classes.heroImageContainer}>
-					<Header />
-				</div>
-			</div>
-			<div
-				className={`${classes.parallaxLayer} ${classes.parallaxLayerBase}`}
-			>
-				{children}
-			</div>
+		<div className={classes.root}>
+			<Header />
+			{children}
 		</div>
 	);
 };
