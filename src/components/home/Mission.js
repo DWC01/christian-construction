@@ -6,7 +6,10 @@ const useStyles = makeStyles(() => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: '200px',
+		height: '300px',
+	},
+	missionTextContainer: {
+		textAlign: 'center',
 	},
 	missionStatement: {
 		marginTop: '15px',
@@ -19,9 +22,11 @@ const Mission = () => {
 
 	return (
 		<div className={classes.missionContainer}>
-			<div className={classes.ourMission}> Our Mission </div>
-			<div className={classes.missionStatement}>
-				Make your dream kitchen a reality.
+			<div className={classes.missionTextContainer}>
+				<div> Our Mission </div>
+				<div className={classes.missionStatement}>
+					Make your dream kitchen a reality.
+				</div>
 			</div>
 		</div>
 	);

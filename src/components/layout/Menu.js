@@ -9,7 +9,6 @@ const useStyles = makeStyles(() => ({
 		marginTop: '30px',
 	},
 	menuItem: {
-		color: '#555',
 		marginRight: '15px',
 		borderBottom: '1px solid transparent',
 		'&:hover': {
