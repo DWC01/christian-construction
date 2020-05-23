@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
 	menuContainer: {
 		display: 'flex',
 		alignItems: 'center',
@@ -9,8 +9,12 @@ const useStyles = makeStyles(theme => ({
 		marginTop: '30px',
 	},
 	menuItem: {
-		color: theme.palette.primary.main,
+		color: '#555',
 		marginRight: '15px',
+		borderBottom: '1px solid transparent',
+		'&:hover': {
+			borderBottom: '1px solid #555',
+		},
 	},
 }));
 
@@ -22,7 +26,7 @@ const Menu = () => {
 			<Typography className={classes.menuItem}>About</Typography>
 			<Typography className={classes.menuItem}>Portfolio</Typography>
 			<Typography className={classes.menuItem}>Our Process</Typography>
-			<Typography className={classes.menuItem}>Contatact</Typography>
+			<Typography className={classes.menuItem}>Contact</Typography>
 		</div>
 	);
 };
