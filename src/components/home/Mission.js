@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
 	missionContainer: {
@@ -23,10 +24,10 @@ const Mission = () => {
 	return (
 		<div className={classes.missionContainer}>
 			<div className={classes.missionTextContainer}>
-				<div> Our Mission </div>
-				<div className={classes.missionStatement}>
+				<Typography> Our Mission </Typography>
+				<Typography className={classes.missionStatement}>
 					Make your dream kitchen a reality.
-				</div>
+				</Typography>
 			</div>
 		</div>
 	);

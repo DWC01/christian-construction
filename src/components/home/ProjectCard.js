@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
 	projectCard: {
 		width: '350px',
 		height: '400px',
 		margin: '0 30px',
+		position: 'relative',
 	},
 	projectCardRadius: {
 		borderRadius: '2px',
@@ -28,10 +32,38 @@ const useStyles = makeStyles(() => ({
 		padding: '0 20px',
 		textAlign: 'center',
 		color: '#777',
+		fontSize: '.95rem',
+	},
+	locationContainer: {
+		position: 'absolute',
+		left: '10px',
+		bottom: '16px',
+	},
+	locationData: {
+		display: 'flex',
+		alignItems: 'center',
+	},
+	location: {
+		fontSize: '.95rem',
+		color: '#97aeff',
+	},
+	locationIcon: {
+		fill: '#97aeff',
+		marginRight: '5px',
+		position: 'relative',
+		top: '-1px',
+	},
+	arrowContainer: {
+		position: 'absolute',
+		right: '10px',
+		bottom: '10px',
+	},
+	arrowIcon: {
+		fill: '#97aeff',
 	},
 }));
 
-const ProjectCard = ({ imgSrc }) => {
+const ProjectCard = ({ imgSrc, title, description, location }) => {
 	const classes = useStyles();
 
 	return (
@@ -48,10 +80,21 @@ const ProjectCard = ({ imgSrc }) => {
 				alt="project-cover"
 			/>
 			<div className={classes.descriptionContainer}>
-				<div className={classes.header}>Kitchen Remodel</div>
-				<div className={classes.description}>
-					Cedar white cabinets and white tile backsplash
+				<Typography className={classes.header}>{title}</Typography>
+				<Typography className={classes.description}>
+					{description}
+				</Typography>
+			</div>
+			<div className={classes.locationContainer}>
+				<div className={classes.locationData}>
+					<LocationOnIcon className={classes.locationIcon} />
+					<Typography className={classes.location}>
+						{location}
+					</Typography>
 				</div>
+			</div>
+			<div className={classes.arrowContainer}>
+				<ArrowForwardIosRoundedIcon className={classes.arrowIcon} />
 			</div>
 		</Paper>
 	);
@@ -59,6 +102,9 @@ const ProjectCard = ({ imgSrc }) => {
 
 ProjectCard.propTypes = {
 	imgSrc: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	location: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;
