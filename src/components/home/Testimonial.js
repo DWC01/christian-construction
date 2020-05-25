@@ -1,30 +1,48 @@
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import PropTypes from 'prop-types';
+import StarRoundedIcon from '@material-ui/icons/StarRounded';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
 	testimonialWrapper: {
 		display: 'flex',
 		width: '400px',
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: '430px',
+		height: '650px',
 	},
 	testimonialContainer: {
 		width: '350px',
-		height: '380px',
+		height: '600px',
 		overflow: 'hidden',
+		position: 'relative',
 	},
 	testimonial: {
 		padding: '25px',
+		maxHeight: '400px',
+		overflow: 'hidden',
+	},
+	testimonialInfo: {
+		position: 'absolute',
+		bottom: '30px',
+		width: '100%',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		flexDirection: 'column',
 	},
 	clientName: {
 		textAlign: 'center',
-		marginTop: '25px',
+	},
+	ratingsConatiner: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginTop: '12px',
 	},
 	rating: {
-		marginTop: '25px',
+		fill: theme.palette.primary.main,
 	},
 }));
 
@@ -37,10 +55,19 @@ const Testimonial = ({ children, clientName }) => {
 				<Typography className={classes.testimonial}>
 					{children}
 				</Typography>
-				<Typography className={classes.clientName}>
-					{clientName}
-				</Typography>
-				<div className={classes.rating}>^^^^^</div>
+				<div className={classes.testimonialInfo}>
+					<Typography className={classes.clientName}>
+						{clientName}
+					</Typography>
+					<div className={classes.ratingsConatiner}>
+						<StarRoundedIcon className={classes.rating} />
+						<StarRoundedIcon className={classes.rating} />
+						<StarRoundedIcon className={classes.rating} />
+						<StarRoundedIcon className={classes.rating} />
+						<StarRoundedIcon className={classes.rating} />
+						<StarRoundedIcon className={classes.rating} />
+					</div>
+				</div>
 			</Paper>
 		</div>
 	);
