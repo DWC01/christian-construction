@@ -7,7 +7,7 @@ import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import Swiper from 'swiper';
 import Testimonial from './Testimonial';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
 	testimonnialsContainer: {
 		maxWidth: '1200px',
 		margin: '0 auto',
@@ -41,17 +41,21 @@ const useStyles = makeStyles(() => ({
 		width: '400px !important',
 	},
 	swiperButton: {
+		top: '250px',
 		position: 'absolute',
-		top: '0px',
+		outline: 'none',
 	},
 	swiperButtonIcon: {
 		fontSize: '2rem',
+		cursor: 'pointer',
 	},
 	swiperButtonPrev: {
-		left: '0px',
+		left: '-8px',
+		color: theme.palette.primary.main,
 	},
 	swiperButtonNext: {
-		right: '0px',
+		right: '-8px',
+		color: theme.palette.primary.main,
 	},
 }));
 
