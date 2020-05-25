@@ -47,7 +47,7 @@ const Testimonial = ({ children, clientName }) => {
 };
 
 Testimonial.propTypes = {
-	children: PropTypes.array.isRequired,
+	children: PropTypes.node.isRequired,
 	clientName: PropTypes.string.isRequired,
 };
 
