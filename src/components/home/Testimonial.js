@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 	quote: {
 		position: 'absolute',
 		transform: 'rotate(180deg)',
-		fill: '#97aeff',
+		fill: theme.palette.primary.light,
 		top: '-30px',
 		fontSize: '7rem',
 		opacity: '.12',

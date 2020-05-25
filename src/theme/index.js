@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import colors from './colors';
 
-const { primary, background } = colors;
+const { primaryLight, primary, background } = colors;
 
 const theme = createMuiTheme({
 	typography: {
@@ -15,6 +15,7 @@ const theme = createMuiTheme({
 	},
 	palette: {
 		primary: {
+			light: primaryLight,
 			main: primary,
 		},
 		// secondary: {

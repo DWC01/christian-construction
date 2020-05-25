@@ -5,7 +5,7 @@ import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounde
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
 	projectCard: {
 		width: '350px',
 		height: '400px',
@@ -45,10 +45,10 @@ const useStyles = makeStyles(() => ({
 	},
 	location: {
 		fontSize: '.95rem',
-		color: '#97aeff',
+		color: theme.palette.primary.light,
 	},
 	locationIcon: {
-		fill: '#97aeff',
+		fill: theme.palette.primary.light,
 		marginRight: '5px',
 		position: 'relative',
 		top: '-1px',
@@ -59,7 +59,7 @@ const useStyles = makeStyles(() => ({
 		bottom: '10px',
 	},
 	arrowIcon: {
-		fill: '#97aeff',
+		fill: theme.palette.primary.light,
 	},
 }));
 

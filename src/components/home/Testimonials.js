@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	testimonialCount: {
 		textAlign: 'center',
-		color: '#97aeff',
+		color: theme.palette.primary.light,
 	},
 }));
 

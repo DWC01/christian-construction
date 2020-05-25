@@ -5,6 +5,7 @@ import Projects from '../src/components/home/Projects';
 import About from '../src/components/home/About';
 import LatestAchievements from '../src/components/home/LatestAchievements';
 import Testimonials from '../src/components/home/Testimonials';
+import Contact from '../src/components/home/Contact';
 
 const useStyles = makeStyles(() => ({
 	heroImageContainer: {
@@ -23,6 +24,9 @@ const useStyles = makeStyles(() => ({
 		marginTop: '100px',
 	},
 	testimonialsContainer: {
+		marginTop: '100px',
+	},
+	getStarted: {
 		marginTop: '100px',
 		height: '500px',
 	},
@@ -50,6 +54,9 @@ const Index = () => {
 			</div>
 			<div className={classes.testimonialsContainer}>
 				<Testimonials />
+			</div>
+			<div className={classes.getStarted}>
+				<Contact />
 			</div>
 		</>
 	);
