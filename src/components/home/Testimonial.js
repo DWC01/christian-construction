@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 		transition: 'all 1s ease',
 	},
 	testimonialExpanded: {
-		maxHeight: '780px',
+		maxHeight: '1230px',
 	},
 	testimonialInfo: {
 		position: 'absolute',

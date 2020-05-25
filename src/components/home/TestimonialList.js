@@ -511,9 +511,71 @@ const TestimonialList = () => {
 					professionalism and courtesy from their contractor.
 				</Testimonial>
 			</div>
-
-			{/* -------------- */}
-			{/* ? */}
+			{/* 24 */}
+			<div className={`swiper-slide ${classes.swiperSlide}`}>
+				<Testimonial clientName="Frank K.">
+					Wayne completed our kitchen and various other construction
+					jobs, den lighting, conversion of closet to wine
+					refrigerator, repair/replacement of exterior siding.
+					<span className={classes.testimonialHighlight}>
+						{' '}
+						He is a methodical and detailed planner delivering
+						timely outstanding results. Trustworthy and dependable.
+						We were always amazed at his resourcefulness. He is a
+						professional who we highly recommend.{' '}
+					</span>{' '}
+					In October 2015, Wayne completed our Bath remodel -
+					demolishing the existing structure, removing the tub,
+					installing new sub flooring and providing a good
+					subcontractor for the tile work. The laundry room and
+					adjacent guest bathroom were also retiled. He continually
+					provided timely updates until completion. We highly
+					recommend him.
+				</Testimonial>
+			</div>
+			{/* 25 */}
+			<div className={`swiper-slide ${classes.swiperSlide}`}>
+				<Testimonial clientName="Jen A.">
+					Wayne Christian completed our recent remodel of two
+					bathrooms in our home.
+					<span className={classes.testimonialHighlight}>
+						{' '}
+						We highly recommend him without reservations! Wayne was
+						wonderful to work with in every way.{' '}
+					</span>
+					He provided us with a competitive bid as well as detailed
+					plans and a timeline. The project went very smoothly. All of
+					Wayne's work was excellent - thorough and detail-oriented.
+					He was at our home every day, even on days when his
+					subcontractor was doing the work. Wayne is a great
+					communicator and he went above and beyond to confirm every
+					important decision. He is honest and fair - we trusted him
+					completely. Beyond all of that, Wayne is just the nicest
+					person! Our kids loved him. He brought the sheet rock for
+					our bathroom onto our patio a few days ahead so our daughter
+					could decorate it. We are so pleased with the outcome of
+					Wayne's work and we would be very pleased to work with him
+					again in the future.
+				</Testimonial>
+			</div>
+			{/* 26 */}
+			<div className={`swiper-slide ${classes.swiperSlide}`}>
+				<Testimonial clientName="Ed A.">
+					<span className={classes.testimonialHighlight}>
+						{' '}
+						Another excellent job!{' '}
+					</span>
+					We hired Christian Construction to install some electrical
+					timers and wiring for a complicated project involving both
+					the inside and outside of our home. Wayne helped us pick out
+					the appropriate timers, which was not straightforward, and
+					answered questions regarding details and concerns we had
+					regarding the project.Upon completion, the work was first
+					rate. This is the third time we have used Christian
+					Construction and they have always exceed our expectations.
+				</Testimonial>
+			</div>
+			{/* 26 */}
 			<div className={`swiper-slide ${classes.swiperSlide}`}>
 				<Testimonial clientName="Kate S.">
 					<span className={classes.testimonialHighlight}>
@@ -527,7 +589,7 @@ const TestimonialList = () => {
 					just what we'd hoped for.
 				</Testimonial>
 			</div>
-			{/* ? */}
+			{/* 27 */}
 			<div className={`swiper-slide ${classes.swiperSlide}`}>
 				<Testimonial clientName="Erin D.">
 					<span className={classes.testimonialHighlight}>
@@ -548,6 +610,63 @@ const TestimonialList = () => {
 					were very happy with the end result of our unexpected
 					project thanks to Wayne and Christian Construction. We
 					recommend Christian Construction enthusiastically.
+				</Testimonial>
+			</div>
+			{/* 28 */}
+			<div className={`swiper-slide ${classes.swiperSlide}`}>
+				<Testimonial clientName="Erin D.">
+					<span className={classes.testimonialHighlight}>
+						{' '}
+						Christian Construction did a fantastic job remodeling
+						our kitchen a couple of years ago.{' '}
+					</span>
+					When we discovered a damp carpet and wet wall in our family
+					room we called Wayne and he showed up within hours. He made
+					room in his schedule to meet with our insurance adjuster,
+					provided emergency restoration services and in the end
+					demoed much of the family room and all of the fireplace and
+					repaired everything. Additionally, we discovered some bad
+					siding on our house and he replaced that and repainted it.
+					We can’t say enough about Wayne’s professionalism. He
+					communicated well with us about the scope of the repair, did
+					high quality work and showed up when he said he would. We
+					were very happy with the end result of our unexpected
+					project thanks to Wayne and Christian Construction. We
+					recommend Christian Construction enthusiastically.
+				</Testimonial>
+			</div>
+			{/* 29 */}
+			<div className={`swiper-slide ${classes.swiperSlide}`}>
+				<Testimonial clientName="Paula P.">
+					<span className={classes.testimonialHighlight}>
+						{' '}
+						Hiring Wayne Christian to do our kitchen remodel was the
+						absolute best decision we made in the entire project.{' '}
+					</span>
+					We had to bury a 17 foot steel I-beam in the ceiling to hold
+					up the 2nd story of our house in order to remove a wall that
+					opened up our space. There were many obstacles in doing
+					this, including routing of electrical, plumbing vents, and
+					venting of our exhaust hood to the outside. Wayne always had
+					a solution and discussed options with us. Despite the
+					additional time involved to do some of this, he was
+					extremely fair with change orders and we never felt
+					"nickeled and dimed." He worked very well with other parties
+					including the kitchen designer, the cabinet installer, and
+					the granite fabricator/installer so that led to a minimum of
+					problems during the job. He works alone (although sometimes
+					with his son Andrew in the summer) so if you are looking for
+					the fastest job, look elsewhere. But he was diligent in
+					keeping our job moving forward with very few days that he
+					had to go to another client/project. Wayne is a terrific
+					person, very creative, very meticulous, and always conscious
+					of minimizing the disruption on us. We feel he has become a
+					friend, plus someone we would not hesitate to recommend to
+					anyone. All-in-all, it was the best experience we've ever
+					had with a remodeling contractor. Highly recommended! We
+					couldn't have been more pleased with the experience with
+					Wayne and the outcome of our beautiful kitchen. Bill and
+					Ginger Wadsworth
 				</Testimonial>
 			</div>
 		</>
