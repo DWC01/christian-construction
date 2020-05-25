@@ -23,7 +23,7 @@ const LatestAcheivements = () => {
 	return (
 		<div className={classes.latestAchievementsContainer}>
 			<div className={classes.header}>
-				<Typography> Latest Achievements </Typography>
+				<Typography> Our Latest Achievements </Typography>
 			</div>
 			<div className={classes.achievements}>
 				<HouzzBadge code="31_9" />

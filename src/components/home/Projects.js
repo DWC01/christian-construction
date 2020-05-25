@@ -23,22 +23,22 @@ const Projects = () => {
 			</div>
 			<div className={classes.projectCardContainer}>
 				<ProjectCard
-					imgSrc="/home/roundhill-cover.jpg"
-					description="Cedar white cabinets and white tile backsplash"
-					title="Kitchen Remodel"
-					location="Alamo"
-				/>
-				<ProjectCard
 					imgSrc="/home/latchford-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
-					location="Lafayette"
+					location="Lafayette, CA"
+				/>
+				<ProjectCard
+					imgSrc="/home/roundhill-cover.jpg"
+					description="Cedar white cabinets and white tile backsplash"
+					title="Kitchen Remodel"
+					location="Alamo, CA"
 				/>
 				<ProjectCard
 					imgSrc="/home/andrews-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
-					location="Alamo"
+					location="Alamo, CA"
 				/>
 			</div>
 		</>
