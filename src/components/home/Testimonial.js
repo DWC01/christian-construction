@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import StarRoundedIcon from '@material-ui/icons/StarRounded';
+import StarIcon from '@material-ui/icons/Star';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
 const useStyles = makeStyles(theme => ({
 	testimonialWrapper: {
@@ -10,18 +13,25 @@ const useStyles = makeStyles(theme => ({
 		width: '400px',
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: '650px',
+		minHeight: '550px',
 	},
 	testimonialContainer: {
 		width: '350px',
-		height: '600px',
+		minHeight: '500px',
 		overflow: 'hidden',
 		position: 'relative',
 	},
 	testimonial: {
 		padding: '25px',
-		maxHeight: '400px',
+		minHeight: '390px',
+		maxHeight: '390px',
 		overflow: 'hidden',
+		marginBottom: '90px',
+		borderBottom: '1px solid #eee',
+		transition: 'all 1s ease',
+	},
+	testimonialExpanded: {
+		maxHeight: '780px',
 	},
 	testimonialInfo: {
 		position: 'absolute',
@@ -44,28 +54,68 @@ const useStyles = makeStyles(theme => ({
 	rating: {
 		fill: theme.palette.primary.main,
 	},
+	quote: {
+		position: 'absolute',
+		transform: 'rotate(180deg)',
+		fill: '#97aeff',
+		top: '-30px',
+		fontSize: '7rem',
+		opacity: '.12',
+	},
+	expandIcon: {
+		position: 'relative',
+		top: '-84px',
+		left: '317px',
+		cursor: 'pointer',
+		transition: theme.transitions.create('transform', {
+			duration: theme.transitions.duration.shortest,
+		}),
+	},
+	expandIconOpen: {
+		transform: 'rotate(180deg)',
+	},
 }));
 
 const Testimonial = ({ children, clientName }) => {
 	const classes = useStyles();
+	const [expanded, setExpanded] = useState(false);
+
+	const handleExpandClick = () => {
+		console.log(expanded);
+		setExpanded(!expanded);
+	};
 
 	return (
 		<div className={classes.testimonialWrapper}>
 			<Paper elevation={2} className={classes.testimonialContainer}>
-				<Typography className={classes.testimonial}>
+				<FormatQuoteIcon className={classes.quote} />
+				<Typography
+					className={`${classes.testimonial} ${
+						expanded ? classes.testimonialExpanded : ''
+					}`}
+				>
 					{children}
 				</Typography>
+				<ExpandMoreIcon
+					className={`${classes.expandIcon} ${
+						expanded ? classes.expandIconOpen : ''
+					}`}
+					onClick={handleExpandClick}
+					onKeyUp={() => {}}
+					aria-label="show more"
+				>
+					Read More
+				</ExpandMoreIcon>
 				<div className={classes.testimonialInfo}>
 					<Typography className={classes.clientName}>
 						{clientName}
 					</Typography>
 					<div className={classes.ratingsConatiner}>
-						<StarRoundedIcon className={classes.rating} />
-						<StarRoundedIcon className={classes.rating} />
-						<StarRoundedIcon className={classes.rating} />
-						<StarRoundedIcon className={classes.rating} />
-						<StarRoundedIcon className={classes.rating} />
-						<StarRoundedIcon className={classes.rating} />
+						<StarIcon className={classes.rating} />
+						<StarIcon className={classes.rating} />
+						<StarIcon className={classes.rating} />
+						<StarIcon className={classes.rating} />
+						<StarIcon className={classes.rating} />
 					</div>
 				</div>
 			</Paper>

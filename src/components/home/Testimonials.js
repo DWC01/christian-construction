@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
@@ -35,6 +35,7 @@ const useStyles = makeStyles(() => ({
 	},
 	swiperWrapper: {
 		display: 'flex',
+		paddingBottom: '10px',
 	},
 	swiperSlide: {
 		width: '400px !important',
@@ -82,6 +83,27 @@ const Testimonials = () => {
 			<div className={`swiper-container ${classes.swiperContainer}`}>
 				<div className={`swiper-wrapper ${classes.swiperWrapper}`}>
 					<div className={`swiper-slide ${classes.swiperSlide}`}>
+						<Testimonial clientName="Kathleen D.">
+							After interviewing dozens of contractors, we hired
+							Christian Construction to do a major kitchen remodel
+							and could not be more pleased with the outcome. We
+							were incredibly impressed with Wayne Christian's
+							references.
+							<span className={classes.testimonialHighlight}>
+								{' '}
+								Every client we contacted sang his praises, and
+								now we know why. The quality of his work is
+								outstanding,{' '}
+							</span>
+							but what we appreciated most was the clarity of
+							communication, the transparency of billing/costs and
+							his proactive approach. Wayne's deep knowledge and
+							professionalism helped us to avoid some mistakes
+							that we had not considered and his "can-do" attitude
+							helped us achieve our dream kitchen.
+						</Testimonial>
+					</div>
+					<div className={`swiper-slide ${classes.swiperSlide}`}>
 						<Testimonial clientName="Marianne Kearney Design">
 							I’m an interior designer new to the East Bay Area so
 							when it came time to hire a contractor to work on my
@@ -104,27 +126,6 @@ const Testimonials = () => {
 							with pride and skill. I highly recommend Wayne. I
 							know I’ll be calling on him for future client
 							projects.
-						</Testimonial>
-					</div>
-					<div className={`swiper-slide ${classes.swiperSlide}`}>
-						<Testimonial clientName="Kathleen D.">
-							After interviewing dozens of contractors, we hired
-							Christian Construction to do a major kitchen remodel
-							and could not be more pleased with the outcome. We
-							were incredibly impressed with Wayne Christian's
-							references.
-							<span className={classes.testimonialHighlight}>
-								{' '}
-								Every client we contacted sang his praises, and
-								now we know why. The quality of his work is
-								outstanding,{' '}
-							</span>
-							but what we appreciated most was the clarity of
-							communication, the transparency of billing/costs and
-							his proactive approach. Wayne's deep knowledge and
-							professionalism helped us to avoid some mistakes
-							that we had not considered and his "can-do" attitude
-							helped us achieve our dream kitchen.
 						</Testimonial>
 					</div>
 					<div className={`swiper-slide ${classes.swiperSlide}`}>
