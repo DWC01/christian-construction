@@ -614,29 +614,6 @@ const TestimonialList = () => {
 			</div>
 			{/* 28 */}
 			<div className={`swiper-slide ${classes.swiperSlide}`}>
-				<Testimonial clientName="Erin D.">
-					<span className={classes.testimonialHighlight}>
-						{' '}
-						Christian Construction did a fantastic job remodeling
-						our kitchen a couple of years ago.{' '}
-					</span>
-					When we discovered a damp carpet and wet wall in our family
-					room we called Wayne and he showed up within hours. He made
-					room in his schedule to meet with our insurance adjuster,
-					provided emergency restoration services and in the end
-					demoed much of the family room and all of the fireplace and
-					repaired everything. Additionally, we discovered some bad
-					siding on our house and he replaced that and repainted it.
-					We can’t say enough about Wayne’s professionalism. He
-					communicated well with us about the scope of the repair, did
-					high quality work and showed up when he said he would. We
-					were very happy with the end result of our unexpected
-					project thanks to Wayne and Christian Construction. We
-					recommend Christian Construction enthusiastically.
-				</Testimonial>
-			</div>
-			{/* 29 */}
-			<div className={`swiper-slide ${classes.swiperSlide}`}>
 				<Testimonial clientName="Paula P.">
 					<span className={classes.testimonialHighlight}>
 						{' '}
