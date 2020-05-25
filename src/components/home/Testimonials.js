@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
@@ -50,26 +50,46 @@ const useStyles = makeStyles(theme => ({
 		right: '-8px',
 		color: theme.palette.primary.main,
 	},
+	testimonialCount: {
+		textAlign: 'center',
+		color: '#97aeff',
+	},
 }));
 
 const Testimonials = () => {
 	const classes = useStyles();
+	const [count, setCount] = useState(1);
+	const [swiper, setSwiper] = useState(null);
+
+	const handleNextClick = () => {
+		const updateCount = count === 10 ? 10 : count + 1;
+		setCount(updateCount);
+	};
+
+	const handlePrevClick = () => {
+		const updateCount = count === 1 ? 1 : count - 1;
+		setCount(updateCount);
+	};
 
 	useEffect(() => {
-		const swiper = new Swiper('.swiper-container', {
-			init: false,
+		if (!swiper) {
+			const swiperInstance = new Swiper('.swiper-container', {
+				init: false,
 
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			speed: 600,
-			slidesPerView: 3,
-			slidesPerGroup: 3,
-		});
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				speed: 600,
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+			});
 
-		swiper.init();
-	});
+			swiperInstance.init();
+
+			setSwiper(swiperInstance);
+		}
+	}, [swiper]);
 
 	return (
 		<div className={classes.testimonnialsContainer}>
@@ -83,6 +103,10 @@ const Testimonials = () => {
 				</div>
 
 				<div
+					onClick={handlePrevClick}
+					onKeyDown={() => {}}
+					role="button"
+					tabIndex="0"
 					className={`swiper-button-prev ${classes.swiperButton} ${classes.swiperButtonPrev}`}
 				>
 					<ArrowBackIosRoundedIcon
@@ -90,11 +114,19 @@ const Testimonials = () => {
 					/>
 				</div>
 				<div
+					onClick={handleNextClick}
+					onKeyDown={() => {}}
+					role="button"
+					tabIndex="0"
 					className={`swiper-button-next ${classes.swiperButton} ${classes.swiperButtonNext}`}
 				>
 					<ArrowForwardIosRoundedIcon
 						className={classes.swiperButtonIcon}
 					/>
+				</div>
+				<div className={classes.testimonialCount}>
+					{count}
+					/10
 				</div>
 			</div>
 		</div>
