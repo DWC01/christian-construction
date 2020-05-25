@@ -35,7 +35,6 @@ const useStyles = makeStyles(() => ({
 	},
 	swiperWrapper: {
 		display: 'flex',
-		justifyContent: 'center',
 	},
 	swiperSlide: {
 		width: '400px !important',
@@ -66,6 +65,7 @@ const Testimonials = () => {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
 			},
+			speed: 600,
 			slidesPerView: 3,
 			slidesPerGroup: 3,
 		});
@@ -183,6 +183,23 @@ const Testimonials = () => {
 							with the end result of our unexpected project thanks
 							to Wayne and Christian Construction. We recommend
 							Christian Construction enthusiastically.
+						</Testimonial>
+					</div>
+					<div className={`swiper-slide ${classes.swiperSlide}`}>
+						<Testimonial clientName="Erin D.">
+							We hired Christian Construction to remodel our guest
+							house. They were a great team, did excellent work,
+							were very accommodating and easy to work with. More
+							specifically, communication was good, the jobsite
+							was always well maintained and tidy, the crew
+							arrived on time and when expected and the estimate
+							and budget was accurate. When items such as more
+							wall plugs and a change of window size occurred,
+							Wayne explained the additional time required and the
+							added cost as to not surprise us in the end. We
+							would highly recommend Christian Construction and
+							plan to use them on our main house bathroom remodels
+							in the near future!
 						</Testimonial>
 					</div>
 				</div>
