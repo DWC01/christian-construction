@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 const useStyles = makeStyles(() => ({
 	headerContainer: {
-		marginTop: '15px',
+		marginTop: '30px',
 	},
 }));
 
