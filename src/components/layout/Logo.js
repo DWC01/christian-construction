@@ -60,6 +60,17 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '2rem',
 		fontWeight: '300',
 	},
+	'@media (max-width: 470px)': {
+		logoContainer: {
+			flexDirection: 'column',
+		},
+		cssLogoContainer: {
+			margin: '0 5px 5px 5px',
+		},
+		logoText: {
+			fontSize: '1.6rem',
+		},
+	},
 }));
 
 const Logo = () => {

@@ -1,11 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import Logo from './Logo';
 import Menu from './Menu';
 
 const useStyles = makeStyles(() => ({
 	headerContainer: {
-		margin: '30px auto 0 auto',
-		width: '550px',
+		marginTop: '15px',
 	},
 }));
 
@@ -14,8 +14,10 @@ const Header = () => {
 
 	return (
 		<div className={classes.headerContainer}>
-			<Logo />
-			<Menu />
+			<Container>
+				<Logo />
+				<Menu />
+			</Container>
 		</div>
 	);
 };
