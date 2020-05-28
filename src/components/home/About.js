@@ -7,21 +7,31 @@ const useStyles = makeStyles(() => ({
 		maxWidth: '1200px',
 		margin: '0 auto',
 	},
-	header: {
+	headerContainer: {
 		textAlign: 'center',
 	},
+	header: {
+		fontSize: '1.2rem',
+		width: '150px',
+		margin: '0 auto',
+		padding: '0 0 10px 0',
+		borderBottom: '1px solid #ddd',
+	},
 	aboutDataContainer: {
-		marginTop: '30px',
+		marginTop: '50px',
 		display: 'flex',
 	},
 	aboutTextContainer: {
-		padding: '0 50px 0 0',
+		display: 'inline-block',
+		width: '624px',
 	},
 	aboutText: {
 		margin: '10px 0',
 	},
 	profileImage: {
+		display: 'inline-block',
 		width: '400px',
+		height: '384px',
 		borderRadius: '3px',
 	},
 }));
@@ -31,8 +41,8 @@ const About = () => {
 
 	return (
 		<div className={classes.aboutContainer}>
-			<div className={classes.header}>
-				<Typography> About </Typography>
+			<div className={classes.headerContainer}>
+				<Typography className={classes.header}> Company </Typography>
 			</div>
 			<div className={classes.aboutDataContainer}>
 				<div className={classes.aboutTextContainer}>
@@ -43,19 +53,6 @@ const About = () => {
 						project ensures that every customer is 100% satisfied.
 						As the owner, Wayne Christian personally oversees every
 						job from start to finish.
-					</Typography>
-					<Typography className={classes.aboutText}>
-						Wayne Christian graduated from California Polytechnic
-						State University, San Luis Obispo, with a degree in
-						Construction Management from the School of Architecture.
-						He first started working as a Project Engineer on the 26
-						story Hilton Hotel in San Francisco. After working as a
-						Construction Coordinator, building Custom Homes in
-						Blackhawk, he decided to start his own construction
-						company specializing in the design and remodeling of
-						kitchens and bathrooms. Christian Construction has been
-						a licensed General Contract and in business for 22
-						years.
 					</Typography>
 					<Typography className={classes.aboutText}>
 						We listen to our clients. We make note of all of the

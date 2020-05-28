@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import HeroImage from '../src/components/home/HeroImage';
 import Mission from '../src/components/home/Mission';
 import Projects from '../src/components/home/Projects';
@@ -26,7 +27,7 @@ const useStyles = makeStyles(() => ({
 	testimonialsContainer: {
 		marginTop: '100px',
 	},
-	getStarted: {
+	contactContainer: {
 		marginTop: '100px',
 		height: '500px',
 	},
@@ -40,24 +41,26 @@ const Index = () => {
 			<div className={classes.heroImageContainer}>
 				<HeroImage />
 			</div>
-			<div className={classes.missionContainer}>
-				<Mission />
-			</div>
-			<div className={classes.projectsContainer}>
-				<Projects />
-			</div>
-			<div className={classes.aboutContainer}>
-				<About />
-			</div>
-			<div className={classes.latestAchievementsContainer}>
-				<LatestAchievements />
-			</div>
-			<div className={classes.testimonialsContainer}>
-				<Testimonials />
-			</div>
-			<div className={classes.getStarted}>
-				<Contact />
-			</div>
+			<Container>
+				<div className={classes.missionContainer}>
+					<Mission />
+				</div>
+				<div className={classes.projectsContainer}>
+					<Projects />
+				</div>
+				<div className={classes.aboutContainer}>
+					<About />
+				</div>
+				<div className={classes.latestAchievementsContainer}>
+					<LatestAchievements />
+				</div>
+				<div className={classes.testimonialsContainer}>
+					<Testimonials />
+				</div>
+				<div className={classes.contactContainer}>
+					<Contact />
+				</div>
+			</Container>
 		</>
 	);
 };

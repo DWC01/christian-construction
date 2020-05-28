@@ -63,22 +63,26 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-const ProjectCard = ({ imgSrc, title, description, location }) => {
+const ProjectCard = ({ imgSrc, title, description, location, className }) => {
 	const classes = useStyles();
 
 	return (
 		<Paper
+			className={className}
 			classes={{
 				root: classes.projectCard,
 				rounded: classes.projectCardRadius,
 			}}
 			elevation={2}
 		>
-			<img
-				className={classes.projectCoverImage}
-				src={imgSrc}
-				alt="project-cover"
-			/>
+			<picture>
+				<img
+					className={classes.projectCoverImage}
+					src={imgSrc}
+					alt="project-cover"
+				/>
+			</picture>
+
 			<div className={classes.descriptionContainer}>
 				<Typography className={classes.header}>{title}</Typography>
 				<Typography className={classes.description}>
@@ -100,7 +104,12 @@ const ProjectCard = ({ imgSrc, title, description, location }) => {
 	);
 };
 
+ProjectCard.defaultProps = {
+	className: '',
+};
+
 ProjectCard.propTypes = {
+	className: PropTypes.string,
 	imgSrc: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	description: PropTypes.string.isRequired,
