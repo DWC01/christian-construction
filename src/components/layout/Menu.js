@@ -5,9 +5,9 @@ import Drawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import ListItemText from '@material-ui/core/ListItemText';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
+import MobileMenuIcon from './MobileMenuIcon';
 
 const useStyles = makeStyles(theme => ({
 	list: {
@@ -44,6 +44,9 @@ const useStyles = makeStyles(theme => ({
 	mobileMenuContainer: {
 		display: 'none',
 	},
+	closeRoundedIcon: {
+		fill: theme.palette.text.primary,
+	},
 	'@media (max-width: 470px)': {
 		menuContainer: {
 			display: 'none',
@@ -56,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 		},
 		mobileMenu: {
 			fontSize: '2rem',
-			color: theme.palette.action.active,
+			color: theme.palette.text.primary,
 		},
 	},
 }));
@@ -80,10 +83,7 @@ const Menu = () => {
 		<>
 			<div className={classes.mobileMenuContainer}>
 				<IconButton onClick={toggleDrawer()}>
-					<MenuRoundedIcon
-						onClick={toggleDrawer()}
-						className={classes.mobileMenu}
-					/>
+					<MobileMenuIcon />
 				</IconButton>
 			</div>
 			<div className={classes.menuContainer}>
@@ -114,8 +114,13 @@ const Menu = () => {
 				onClose={toggleDrawer()}
 			>
 				<div className={classes.drawerHeader}>
-					<IconButton onClick={toggleDrawer()}>
-						<CloseRoundedIcon />
+					<IconButton
+						className={classes.mobileMenuContainer}
+						onClick={toggleDrawer()}
+					>
+						<CloseRoundedIcon
+							className={classes.closeRoundedIcon}
+						/>
 					</IconButton>
 				</div>
 				<List className={classes.list}>
