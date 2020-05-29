@@ -30,8 +30,8 @@ const useStyles = makeStyles(() => ({
 	},
 	profileImage: {
 		display: 'inline-block',
-		width: '400px',
-		height: '384px',
+		width: '300px',
+		maxHeight: '400px',
 		borderRadius: '3px',
 	},
 }));
@@ -64,11 +64,20 @@ const About = () => {
 						dream come true.
 					</Typography>
 				</div>
-				<img
-					className={classes.profileImage}
-					src="/home/profile-photo.jpg"
-					alt="profile"
-				/>
+				<picture>
+					<source
+						loading="lazy"
+						className={classes.projectCoverImage}
+						srcSet="/home/profile-photo.webp"
+						alt="project-cover"
+					/>
+					<img
+						loading="lazy"
+						className={classes.profileImage}
+						src="/home/profile-photo.jpg"
+						alt="profile"
+					/>
+				</picture>
 			</div>
 		</div>
 	);

@@ -63,7 +63,14 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-const ProjectCard = ({ imgSrc, title, description, location, className }) => {
+const ProjectCard = ({
+	imgSrc,
+	title,
+	location,
+	className,
+	description,
+	backupImgSrc,
+}) => {
 	const classes = useStyles();
 
 	return (
@@ -76,9 +83,16 @@ const ProjectCard = ({ imgSrc, title, description, location, className }) => {
 			elevation={2}
 		>
 			<picture>
-				<img
+				<source
+					loading="lazy"
 					className={classes.projectCoverImage}
-					src={imgSrc}
+					srcSet={imgSrc}
+					alt="project-cover"
+				/>
+				<img
+					loading="lazy"
+					className={classes.projectCoverImage}
+					src={backupImgSrc}
 					alt="project-cover"
 				/>
 			</picture>
@@ -110,10 +124,11 @@ ProjectCard.defaultProps = {
 
 ProjectCard.propTypes = {
 	className: PropTypes.string,
-	imgSrc: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
+	imgSrc: PropTypes.string.isRequired,
 	location: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	backupImgSrc: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;

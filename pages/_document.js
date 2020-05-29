@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
 						name="description"
 						content="Christian Construction is kitchen remodel firm"
 					/>
+					<meta
+						name="viewport"
+						content="width=device-width, initial-scale=1.0"
+					/>
 				</Head>
 				<body>
 					<Main />

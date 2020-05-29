@@ -16,17 +16,26 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const HouzzBadge = ({ code, className }) => {
+const HouzzBadge = ({ imgSrc, backupImgSrc, className }) => {
 	const classes = useStyles();
 
 	return (
 		<Box className={`${className} ${classes.box}`} boxShadow={2}>
 			<a href="https://www.houzz.com/pro/wayne3ck/christian-construction">
-				<img
-					src={`https://st.hzcdn.com/static/badge_${code}@2x.png`}
-					alt="Wayne Christian in Lafayette, CA on Houzz"
-					className={classes.badgeImg}
-				/>
+				<picture>
+					<source
+						loading="lazy"
+						className={classes.projectCoverImage}
+						srcSet={imgSrc}
+						alt="project-cover"
+					/>
+					<img
+						loading="lazy"
+						src={backupImgSrc}
+						alt="Wayne Christian in Lafayette, CA on Houzz"
+						className={classes.badgeImg}
+					/>
+				</picture>
 			</a>
 		</Box>
 	);
@@ -37,8 +46,9 @@ HouzzBadge.defaultProps = {
 };
 
 HouzzBadge.propTypes = {
-	code: PropTypes.string.isRequired,
 	className: PropTypes.string,
+	imgSrc: PropTypes.string.isRequired,
+	backupImgSrc: PropTypes.string.isRequired,
 };
 
 export default HouzzBadge;

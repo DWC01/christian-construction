@@ -54,21 +54,24 @@ const Projects = () => {
 			<div className={classes.projectCardContainer}>
 				<ProjectCard
 					className={classes.projectCard}
-					imgSrc="/home/latchford-cover.jpg"
+					imgSrc="/home/latchford-cover.webp"
+					backupImgSrc="/home/latchford-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
 					location="Lafayette, CA"
 				/>
 				<ProjectCard
 					className={classes.projectCard}
-					imgSrc="/home/roundhill-cover.jpg"
+					imgSrc="/home/roundhill-cover.webp"
+					backupImgSrc="/home/roundhill-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
 					location="Alamo, CA"
 				/>
 				<ProjectCard
 					className={classes.projectCard}
-					imgSrc="/home/andrews-cover.jpg"
+					imgSrc="/home/andrews-cover.webp"
+					backupImgSrc="/home/andrews-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
 					location="Alamo, CA"
