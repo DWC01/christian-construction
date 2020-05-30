@@ -13,6 +13,7 @@ const useStyles = makeStyles(() => ({
 		padding: '0 30px 10px 30px',
 		borderBottom: '1px solid #ddd',
 		width: 'fit-content',
+		textAlign: 'center',
 	},
 }));
 
