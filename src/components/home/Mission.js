@@ -29,7 +29,7 @@ const Mission = () => {
 	const [inView, setInView] = useState(false);
 
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
+		const scrollHandler = () => {
 			const missionStatmentElScroll = document.getElementById(
 				'missionStatment',
 			);
@@ -38,15 +38,17 @@ const Mission = () => {
 			if (!inView && isInViewportScroll) {
 				setInView(isInViewportScroll);
 			}
-		});
+		};
+
+		window.addEventListener('scroll', scrollHandler);
 
 		return () => {
-			window.removeEventListener('scroll', () => {});
+			window.removeEventListener('scroll', scrollHandler);
 		};
 	});
 
 	useEffect(() => {
-		window.addEventListener('load', () => {
+		const loadHandler = () => {
 			const missionStatmentElScroll = document.getElementById(
 				'missionStatment',
 			);
@@ -55,10 +57,12 @@ const Mission = () => {
 			if (!inView && isInViewportScroll) {
 				setInView(isInViewportScroll);
 			}
-		});
+		};
+
+		window.addEventListener('load', loadHandler);
 
 		return () => {
-			window.removeEventListener('load', () => {});
+			window.removeEventListener('load', loadHandler);
 		};
 	});
 

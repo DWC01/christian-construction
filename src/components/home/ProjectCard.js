@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 		height: '400px',
 		margin: '0 30px',
 		position: 'relative',
-		transition: 'all .1s ease',
+		transition: 'all .2s ease',
 		'&:hover': {
 			boxShadow: `${theme.shadows['4']} !important`,
 		},
