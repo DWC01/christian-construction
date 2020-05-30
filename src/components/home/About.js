@@ -33,7 +33,7 @@ const useStyles = makeStyles(() => ({
 			maxWidth: '500px',
 		},
 	},
-	'@media (max-width: 770px)': {
+	'@media (max-width: 870px)': {
 		aboutContainer: {
 			flexDirection: 'column-reverse',
 		},

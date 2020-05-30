@@ -42,8 +42,8 @@ const useStyles = makeStyles(theme => ({
 		marginRight: '10px',
 		color: '#666',
 	},
-	notchedOutline: {
-		'&:hover': {
+	multilinedInput: {
+		'&:hover .MuiOutlinedInput-notchedOutline': {
 			borderColor: `${theme.palette.primary.main} !important`,
 		},
 	},
@@ -81,7 +81,7 @@ const Contact = () => {
 							}}
 							InputProps={{
 								classes: {
-									notchedOutline: classes.notchedOutline,
+									root: classes.multilinedInput,
 								},
 							}}
 							variant="outlined"
@@ -99,6 +99,11 @@ const Contact = () => {
 							InputLabelProps={{
 								shrink: true,
 							}}
+							InputProps={{
+								classes: {
+									root: classes.multilinedInput,
+								},
+							}}
 							variant="outlined"
 						/>
 					</div>
@@ -113,6 +118,11 @@ const Contact = () => {
 							margin="normal"
 							InputLabelProps={{
 								shrink: true,
+							}}
+							InputProps={{
+								classes: {
+									root: classes.multilinedInput,
+								},
 							}}
 							variant="outlined"
 							multiline
