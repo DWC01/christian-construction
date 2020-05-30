@@ -74,6 +74,28 @@ const useStyles = makeStyles(theme => ({
 	expandIconOpen: {
 		transform: 'rotate(180deg)',
 	},
+	'@media (max-width: 430px)': {
+		testimonialWrapper: {
+			width: '350px',
+		},
+		testimonialContainer: {
+			width: '300px',
+		},
+		expandIcon: {
+			left: '270px',
+		},
+	},
+	'@media (max-width: 374px)': {
+		testimonialWrapper: {
+			width: '300px',
+		},
+		testimonialContainer: {
+			width: '280px',
+		},
+		expandIcon: {
+			left: '250px',
+		},
+	},
 }));
 
 const Testimonial = ({ children, clientName }) => {

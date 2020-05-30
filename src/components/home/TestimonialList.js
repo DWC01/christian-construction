@@ -9,6 +9,16 @@ const useStyles = makeStyles(() => ({
 	testimonialHighlight: {
 		fontWeight: '700',
 	},
+	'@media (max-width: 430px)': {
+		swiperSlide: {
+			width: '350px !important',
+		},
+	},
+	'@media (max-width: 374px)': {
+		swiperSlide: {
+			width: '300px !important',
+		},
+	},
 }));
 
 const TestimonialList = () => {

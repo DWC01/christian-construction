@@ -57,15 +57,36 @@ const useStyles = makeStyles(theme => ({
 		textAlign: 'center',
 		color: theme.palette.primary.light,
 	},
+	'@media (max-width: 1260px)': {
+		testimonnialsContainer: {
+			maxWidth: '800px',
+		},
+	},
+	'@media (max-width: 850px)': {
+		testimonnialsContainer: {
+			maxWidth: '400px',
+		},
+	},
+	'@media (max-width: 430px)': {
+		testimonnialsContainer: {
+			width: '350px',
+		},
+	},
+	'@media (max-width: 374px)': {
+		testimonnialsContainer: {
+			width: '300px',
+		},
+	},
 }));
 
 const Testimonials = () => {
 	const classes = useStyles();
 	const [count, setCount] = useState(1);
 	const [swiper, setSwiper] = useState(null);
+	const [totalCount, setTotalCount] = useState(10);
 
 	const handleNextClick = () => {
-		const updateCount = count === 10 ? 10 : count + 1;
+		const updateCount = count === totalCount ? totalCount : count + 1;
 		setCount(updateCount);
 	};
 
@@ -75,6 +96,16 @@ const Testimonials = () => {
 	};
 
 	useEffect(() => {
+		const windowWidth = window.innerWidth;
+
+		if (windowWidth <= 1260) {
+			setTotalCount(14);
+		}
+
+		if (windowWidth <= 850) {
+			setTotalCount(28);
+		}
+
 		if (!swiper) {
 			const swiperInstance = new Swiper('.swiper-container', {
 				init: false,
@@ -84,8 +115,19 @@ const Testimonials = () => {
 					prevEl: '.swiper-button-prev',
 				},
 				speed: 600,
-				slidesPerView: 3,
-				slidesPerGroup: 3,
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+
+				breakpoints: {
+					850: {
+						slidesPerView: 2,
+						slidesPerGroup: 2,
+					},
+					1260: {
+						slidesPerView: 3,
+						slidesPerGroup: 3,
+					},
+				},
 			});
 
 			swiperInstance.init();
@@ -128,8 +170,7 @@ const Testimonials = () => {
 						/>
 					</div>
 					<div className={classes.testimonialCount}>
-						{count}
-						/10
+						{count}/{totalCount}
 					</div>
 				</div>
 			</div>

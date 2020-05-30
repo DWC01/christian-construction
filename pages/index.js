@@ -49,10 +49,10 @@ const Index = () => {
 				<div className={classes.section}>
 					<LatestAchievements />
 				</div>
-				{/* <div className={classes.section}>
+				<div className={classes.section}>
 					<Testimonials />
 				</div>
-				<div className={classes.section}>
+				{/* <div className={classes.section}>
 					<Contact />
 				</div> */}
 			</Container>
