@@ -50,7 +50,6 @@ const useStyles = makeStyles(() => ({
 
 const About = () => {
 	const classes = useStyles();
-
 	return (
 		<Section header="Company">
 			<div className={classes.aboutContainer}>
