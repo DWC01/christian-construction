@@ -74,6 +74,7 @@ const About = () => {
 				</div>
 				<picture className={classes.aboutPictureContainer}>
 					<source
+						type="image/webp"
 						loading="lazy"
 						className={classes.projectCoverImage}
 						srcSet="/home/profile-photo.webp"

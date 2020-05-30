@@ -24,6 +24,7 @@ const HouzzBadge = ({ imgSrc, backupImgSrc, className }) => {
 			<a href="https://www.houzz.com/pro/wayne3ck/christian-construction">
 				<picture>
 					<source
+						type="image/webp"
 						loading="lazy"
 						className={classes.projectCoverImage}
 						srcSet={imgSrc}

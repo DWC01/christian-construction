@@ -107,6 +107,7 @@ const ProjectCard = ({
 			<Link href="/" className={classes.link}>
 				<picture>
 					<source
+						type="image/webp"
 						loading="lazy"
 						className={classes.projectCoverImage}
 						srcSet={imgSrc}

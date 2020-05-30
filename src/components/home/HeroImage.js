@@ -13,19 +13,21 @@ const HeroImage = () => {
 	return (
 		<picture>
 			<source
+				type="image/webp"
 				media="(min-width:430px)"
 				className={classes.projectCoverImage}
 				srcSet="/home/roundhill-hero.webp"
 				alt="project-cover"
 			/>
 			<source
+				type="image/webp"
 				className={classes.projectCoverImage}
 				srcSet="/home/roundhill-hero-mobile.webp"
 				alt="project-cover"
 			/>
 			<img
 				className={classes.heroImage}
-				src="/home/roundhill-hero.webp"
+				src="/home/roundhill-hero.jpg"
 				alt="hero"
 			/>
 		</picture>
