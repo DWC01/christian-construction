@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Typography from '@material-ui/core/Typography';
+import Link from '../global/Link';
 
 const useStyles = makeStyles(theme => ({
 	projectCard: {
@@ -11,6 +12,12 @@ const useStyles = makeStyles(theme => ({
 		height: '400px',
 		margin: '0 30px',
 		position: 'relative',
+		top: '0',
+		transition: 'all .1s ease',
+		'&:hover': {
+			boxShadow: `${theme.shadows['3']} !important`,
+			top: '-5px',
+		},
 	},
 	projectCardRadius: {
 		borderRadius: '2px',
@@ -28,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 	header: {
 		margin: '10px',
 		fontSize: '1.1rem',
+		color: theme.palette.text.primary,
 	},
 	description: {
 		padding: '0 20px',
@@ -62,6 +70,11 @@ const useStyles = makeStyles(theme => ({
 	arrowIcon: {
 		fill: theme.palette.primary.light,
 	},
+	link: {
+		'&:hover': {
+			textDecoration: 'none',
+		},
+	},
 	'@media (max-width: 400px)': {
 		projectCard: {
 			margin: '0 10px',
@@ -93,38 +106,40 @@ const ProjectCard = ({
 			}}
 			elevation={2}
 		>
-			<picture>
-				<source
-					loading="lazy"
-					className={classes.projectCoverImage}
-					srcSet={imgSrc}
-					alt="project-cover"
-				/>
-				<img
-					loading="lazy"
-					className={classes.projectCoverImage}
-					src={backupImgSrc}
-					alt="project-cover"
-				/>
-			</picture>
+			<Link href="/" className={classes.link}>
+				<picture>
+					<source
+						loading="lazy"
+						className={classes.projectCoverImage}
+						srcSet={imgSrc}
+						alt="project-cover"
+					/>
+					<img
+						loading="lazy"
+						className={classes.projectCoverImage}
+						src={backupImgSrc}
+						alt="project-cover"
+					/>
+				</picture>
 
-			<div className={classes.descriptionContainer}>
-				<Typography className={classes.header}>{title}</Typography>
-				<Typography className={classes.description}>
-					{description}
-				</Typography>
-			</div>
-			<div className={classes.locationContainer}>
-				<div className={classes.locationData}>
-					<LocationOnIcon className={classes.locationIcon} />
-					<Typography className={classes.location}>
-						{location}
+				<div className={classes.descriptionContainer}>
+					<Typography className={classes.header}>{title}</Typography>
+					<Typography className={classes.description}>
+						{description}
 					</Typography>
 				</div>
-			</div>
-			<div className={classes.arrowContainer}>
-				<ArrowForwardIosRoundedIcon className={classes.arrowIcon} />
-			</div>
+				<div className={classes.locationContainer}>
+					<div className={classes.locationData}>
+						<LocationOnIcon className={classes.locationIcon} />
+						<Typography className={classes.location}>
+							{location}
+						</Typography>
+					</div>
+				</div>
+				<div className={classes.arrowContainer}>
+					<ArrowForwardIosRoundedIcon className={classes.arrowIcon} />
+				</div>
+			</Link>
 		</Paper>
 	);
 };

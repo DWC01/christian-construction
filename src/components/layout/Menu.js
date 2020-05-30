@@ -124,7 +124,7 @@ const Menu = () => {
 			</div>
 			<div className={classes.menuContainer}>
 				{links.map(({ text, path }) => (
-					<Link href={path} className={classes.menuItem}>
+					<Link key={text} href={path} className={classes.menuItem}>
 						<Typography>{text}</Typography>
 					</Link>
 				))}
@@ -163,13 +163,10 @@ const Menu = () => {
 						<Link
 							onClick={toggleDrawer()}
 							href={path}
+							key={text}
 							className={classes.menuItem}
 						>
-							<ListItem
-								key={text}
-								className={classes.listItem}
-								button
-							>
+							<ListItem className={classes.listItem} button>
 								<ListItemText primary={text} />
 							</ListItem>
 						</Link>
