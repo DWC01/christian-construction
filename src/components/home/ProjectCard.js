@@ -12,11 +12,9 @@ const useStyles = makeStyles(theme => ({
 		height: '400px',
 		margin: '0 30px',
 		position: 'relative',
-		top: '0',
 		transition: 'all .1s ease',
 		'&:hover': {
-			boxShadow: `${theme.shadows['3']} !important`,
-			top: '-5px',
+			boxShadow: `${theme.shadows['4']} !important`,
 		},
 	},
 	projectCardRadius: {
