@@ -43,10 +43,10 @@ const Index = () => {
 				<div className={classes.section}>
 					<Projects />
 				</div>
-				{/* <div className={classes.section}>
+				<div className={classes.section}>
 					<About />
 				</div>
-				<div className={classes.section}>
+				{/* <div className={classes.section}>
 					<LatestAchievements />
 				</div>
 				<div className={classes.section}>

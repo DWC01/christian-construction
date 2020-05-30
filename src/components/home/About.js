@@ -4,14 +4,17 @@ import Section from './Section';
 
 const useStyles = makeStyles(() => ({
 	aboutContainer: {
-		height: '500px',
 		margin: '0 auto',
 		marginTop: '50px',
 		display: 'flex',
+		justifyContent: 'space-evenly',
+		alignItems: 'center',
+		padding: '0 15px',
 	},
 	aboutTextContainer: {
 		display: 'inline-block',
-		width: '600px',
+		maxWidth: '600px',
+		marginRight: '20px',
 	},
 	aboutText: {
 		margin: '10px 0',
@@ -19,8 +22,18 @@ const useStyles = makeStyles(() => ({
 	profileImage: {
 		display: 'inline-block',
 		width: '300px',
-		maxHeight: '400px',
+		height: '250px',
 		borderRadius: '3px',
+	},
+	'@media (max-width: 770px)': {
+		aboutContainer: {
+			flexDirection: 'column-reverse',
+		},
+		profileImage: {
+			width: '200px',
+			height: '200px',
+			marginBottom: '30px',
+		},
 	},
 }));
 
