@@ -16,8 +16,9 @@ const useStyles = makeStyles(theme => ({
 		borderRadius: '2px',
 	},
 	projectCoverImage: {
-		width: '350px',
-		borderRadius: '2px',
+		width: '100%',
+		borderTopLeftRadius: '2px',
+		borderTopRightRadius: '2px',
 	},
 	descriptionContainer: {
 		display: 'flex',
@@ -60,6 +61,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	arrowIcon: {
 		fill: theme.palette.primary.light,
+	},
+	'@media (max-width: 400px)': {
+		projectCard: {
+			margin: '0 10px',
+		},
+	},
+	'@media (max-width: 330px)': {
+		projectCard: {
+			height: '375px',
+		},
 	},
 }));
 

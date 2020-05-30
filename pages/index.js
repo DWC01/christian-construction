@@ -43,7 +43,7 @@ const Index = () => {
 				<div className={classes.section}>
 					<Projects />
 				</div>
-				<div className={classes.section}>
+				{/* <div className={classes.section}>
 					<About />
 				</div>
 				<div className={classes.section}>
@@ -54,7 +54,7 @@ const Index = () => {
 				</div>
 				<div className={classes.section}>
 					<Contact />
-				</div>
+				</div> */}
 			</Container>
 		</>
 	);

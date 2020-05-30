@@ -24,15 +24,12 @@ const useStyles = makeStyles(() => ({
 			flexDirection: 'row-reverse',
 		},
 		projectCard: {
-			'&:nth-child(2)': {
-				marginBottom: '40px',
-			},
 			'&:last-child': {
 				display: 'none',
 			},
 		},
 	},
-	'@media (max-width: 1024px)': {
+	'@media (max-width: 870px)': {
 		projectCardContainer: {
 			flexWrap: 'wrap-reverse',
 		},
