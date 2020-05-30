@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
 	},
 	aboutTextContainer: {
 		display: 'inline-block',
-		maxWidth: '600px',
+		maxWidth: '750px',
 		marginRight: '20px',
 	},
 	aboutText: {
@@ -24,6 +24,14 @@ const useStyles = makeStyles(() => ({
 		width: '300px',
 		height: '250px',
 		borderRadius: '3px',
+	},
+	'@media (max-width: 1284px)': {
+		aboutContainer: {
+			justifyContent: 'center',
+		},
+		aboutTextContainer: {
+			maxWidth: '500px',
+		},
 	},
 	'@media (max-width: 770px)': {
 		aboutContainer: {

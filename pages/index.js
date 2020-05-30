@@ -52,9 +52,9 @@ const Index = () => {
 				<div className={classes.section}>
 					<Testimonials />
 				</div>
-				{/* <div className={classes.section}>
+				<div className={classes.section}>
 					<Contact />
-				</div> */}
+				</div>
 			</Container>
 		</>
 	);
