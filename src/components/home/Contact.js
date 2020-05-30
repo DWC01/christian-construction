@@ -18,12 +18,12 @@ const useStyles = makeStyles(theme => ({
 	},
 	about: {
 		textAlign: 'center',
-		width: '550px',
+		maxWidth: '550px',
 		margin: '0 auto',
 		marginBottom: '30px',
 	},
 	contactFormContainer: {
-		width: '500px',
+		maxWidth: '500px',
 		padding: '20px',
 		margin: '0 auto 100px auto',
 	},
@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		margin: '0 0 20px 0',
 		color: '#666',
+		overflowWrap: 'anywhere',
 	},
 	contactInfoIcon: {
 		marginRight: '10px',
@@ -45,6 +46,19 @@ const useStyles = makeStyles(theme => ({
 	multilinedInput: {
 		'&:hover .MuiOutlinedInput-notchedOutline': {
 			borderColor: `${theme.palette.primary.main} !important`,
+		},
+	},
+	'@media (max-width: 430px)': {
+		multilinedInput: {
+			fontSize: '16px',
+			'&:hover .MuiOutlinedInput-notchedOutline': {
+				borderColor: `${theme.palette.primary.main} !important`,
+			},
+		},
+	},
+	'@media (max-width: 390px)': {
+		contactInfoText: {
+			fontSize: '.9rem',
 		},
 	},
 }));
@@ -137,19 +151,28 @@ const Contact = () => {
 					</div>
 					<div className={classes.contactInfo}>
 						<LocationOnIcon className={classes.contactInfoIcon} />
-						<Typography>
-							26 Beaumont Ct. Lafayette, CA, 94549
-						</Typography>
+						<div>
+							<Typography className={classes.contactInfoText}>
+								26 Beaumont Ct.
+							</Typography>
+							<Typography className={classes.contactInfoText}>
+								Lafayette, CA, 94549
+							</Typography>
+						</div>
 					</div>
 					<div className={classes.contactInfo}>
 						<CallRoundedIcon className={classes.contactInfoIcon} />
-						<Typography>(925) 639-9635</Typography>
+						<Typography className={classes.contactInfoText}>
+							(925) 639-9635
+						</Typography>
 					</div>
 					<div className={classes.contactInfo}>
 						<MailOutlineRoundedIcon
 							className={classes.contactInfoIcon}
 						/>
-						<Typography>wayne@christianconstruction.com</Typography>
+						<Typography className={classes.contactInfoText}>
+							wayne@christianconstruction.com
+						</Typography>
 					</div>
 				</div>
 			</Paper>
