@@ -13,23 +13,18 @@ const useStyles = makeStyles(() => ({
 		marginTop: '30px',
 	},
 	missionContainer: {
-		marginTop: '150px',
+		margin: '150px 0',
 	},
-	projectsContainer: {
+	section: {
 		marginTop: '100px',
 	},
-	aboutContainer: {
-		marginTop: '100px',
-	},
-	latestAchievementsContainer: {
-		marginTop: '100px',
-	},
-	testimonialsContainer: {
-		marginTop: '100px',
-	},
-	contactContainer: {
-		marginTop: '100px',
-		height: '500px',
+	'@media (max-width: 430px)': {
+		missionContainer: {
+			margin: '50px 0',
+		},
+		section: {
+			marginTop: '75px',
+		},
 	},
 }));
 
@@ -45,19 +40,19 @@ const Index = () => {
 				<div className={classes.missionContainer}>
 					<Mission />
 				</div>
-				<div className={classes.projectsContainer}>
+				<div className={classes.section}>
 					<Projects />
 				</div>
-				<div className={classes.aboutContainer}>
+				<div className={classes.section}>
 					<About />
 				</div>
-				<div className={classes.latestAchievementsContainer}>
+				<div className={classes.section}>
 					<LatestAchievements />
 				</div>
-				<div className={classes.testimonialsContainer}>
+				<div className={classes.section}>
 					<Testimonials />
 				</div>
-				<div className={classes.contactContainer}>
+				<div className={classes.section}>
 					<Contact />
 				</div>
 			</Container>

@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import ProjectCard from './ProjectCard';
 import Section from './Section';
 
@@ -25,7 +24,9 @@ const useStyles = makeStyles(() => ({
 			flexDirection: 'row-reverse',
 		},
 		projectCard: {
-			marginBottom: '40px',
+			'&:nth-child(2)': {
+				marginBottom: '40px',
+			},
 			'&:last-child': {
 				display: 'none',
 			},
@@ -36,7 +37,9 @@ const useStyles = makeStyles(() => ({
 			flexWrap: 'wrap-reverse',
 		},
 		projectCard: {
-			marginBottom: '40px',
+			'&:nth-child(2)': {
+				marginBottom: '40px',
+			},
 			'&:last-child': {
 				display: 'none',
 			},

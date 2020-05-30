@@ -6,13 +6,11 @@ const useStyles = makeStyles(() => ({
 	missionContentContainer: {
 		display: 'flex',
 		alignItems: 'center',
-		flexDirection: 'column',
 		justifyContent: 'center',
-		height: '50px',
 	},
 	missionStatement: {
-		marginTop: '15px',
 		fontSize: '1.5rem',
+		textAlign: 'center',
 	},
 }));
 

@@ -1,7 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -11,9 +8,6 @@ import CallRoundedIcon from '@material-ui/icons/CallRounded';
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 
 const useStyles = makeStyles(theme => ({
-	contactContainer: {
-		height: '500px',
-	},
 	headerContainer: {
 		textAlign: 'center',
 	},
@@ -31,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 	contactFormContainer: {
 		width: '500px',
 		padding: '20px',
-		margin: '0 auto 300px auto',
+		margin: '0 auto 100px auto',
 	},
 	contactInfoContainer: {
 		marginTop: '30px',
@@ -59,7 +53,7 @@ const Contact = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.contactContainer}>
+		<>
 			<div className={classes.headerContainer}>
 				<Typography className={classes.header}>
 					Ready to get started?
@@ -149,7 +143,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</Paper>
-		</div>
+		</>
 	);
 };
 
