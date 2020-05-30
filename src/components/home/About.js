@@ -37,6 +37,9 @@ const useStyles = makeStyles(() => ({
 		aboutContainer: {
 			flexDirection: 'column-reverse',
 		},
+		aboutTextContainer: {
+			textAlign: 'center',
+		},
 		profileImage: {
 			width: '200px',
 			height: '200px',
