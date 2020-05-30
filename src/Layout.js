@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 	return (
 		<div className={classes.root}>
 			<Header />
-			{children}
+			<main>{children}</main>
 		</div>
 	);
 };

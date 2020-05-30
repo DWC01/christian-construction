@@ -1,15 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import HouzzBadge from './HouzzBadge';
+import Section from './Section';
 
 const useStyles = makeStyles(() => ({
-	latestAchievementsContainer: {
-		maxWidth: '1200px',
-		margin: '0 auto',
-	},
-	header: {
-		textAlign: 'center',
-	},
 	achievementsConatiner: {
 		display: 'flex',
 		alignItems: 'center',
@@ -28,10 +21,7 @@ const LatestAcheivements = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.latestAchievementsContainer}>
-			<div className={classes.header}>
-				<Typography> Our Latest Achievements </Typography>
-			</div>
+		<Section header="Our Latest Achievements">
 			<div className={classes.achievementsConatiner}>
 				<div className={classes.achievements}>
 					<HouzzBadge
@@ -66,7 +56,7 @@ const LatestAcheivements = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

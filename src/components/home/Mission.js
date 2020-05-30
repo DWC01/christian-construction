@@ -1,16 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Section from './Section';
 
 const useStyles = makeStyles(() => ({
-	missionContainer: {
+	missionContentContainer: {
 		display: 'flex',
-		flexDirection: 'column',
 		alignItems: 'center',
+		flexDirection: 'column',
 		justifyContent: 'center',
-		height: '300px',
-	},
-	missionTextContainer: {
-		textAlign: 'center',
+		height: '50px',
 	},
 	missionStatement: {
 		marginTop: '15px',
@@ -22,14 +20,13 @@ const Mission = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.missionContainer}>
-			<div className={classes.missionTextContainer}>
-				<Typography> Our Mission </Typography>
+		<Section header="Our Mission">
+			<div className={classes.missionContentContainer}>
 				<Typography className={classes.missionStatement}>
 					Make your dream kitchen a reality.
 				</Typography>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

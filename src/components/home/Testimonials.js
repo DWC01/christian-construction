@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import Swiper from 'swiper';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
-import Swiper from 'swiper';
 import TestimonialList from './TestimonialList';
+import Section from './Section';
 
 const useStyles = makeStyles(theme => ({
+	section: {
+		margin: '0 auto 40px auto',
+	},
 	testimonnialsContainer: {
 		maxWidth: '1200px',
 		margin: '0 auto',
@@ -22,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 		margin: '30px',
 	},
 	swiperContainer: {
-		margin: '30px auto',
+		margin: '0 auto',
 		padding: '0',
 		position: 'relative',
 		overflow: 'hidden',
@@ -92,44 +95,45 @@ const Testimonials = () => {
 	}, [swiper]);
 
 	return (
-		<div className={classes.testimonnialsContainer}>
-			<div className={classes.header}>
-				<Typography> What our clients have to say </Typography>
-			</div>
+		<Section
+			header="What our clients have to say"
+			sectionHeaderClass={classes.section}
+		>
+			<div className={classes.testimonnialsContainer}>
+				<div className={`swiper-container ${classes.swiperContainer}`}>
+					<div className={`swiper-wrapper ${classes.swiperWrapper}`}>
+						<TestimonialList />
+					</div>
 
-			<div className={`swiper-container ${classes.swiperContainer}`}>
-				<div className={`swiper-wrapper ${classes.swiperWrapper}`}>
-					<TestimonialList />
-				</div>
-
-				<div
-					onClick={handlePrevClick}
-					onKeyDown={() => {}}
-					role="button"
-					tabIndex="0"
-					className={`swiper-button-prev ${classes.swiperButton} ${classes.swiperButtonPrev}`}
-				>
-					<ArrowBackIosRoundedIcon
-						className={classes.swiperButtonIcon}
-					/>
-				</div>
-				<div
-					onClick={handleNextClick}
-					onKeyDown={() => {}}
-					role="button"
-					tabIndex="0"
-					className={`swiper-button-next ${classes.swiperButton} ${classes.swiperButtonNext}`}
-				>
-					<ArrowForwardIosRoundedIcon
-						className={classes.swiperButtonIcon}
-					/>
-				</div>
-				<div className={classes.testimonialCount}>
-					{count}
-					/10
+					<div
+						onClick={handlePrevClick}
+						onKeyDown={() => {}}
+						role="button"
+						tabIndex="0"
+						className={`swiper-button-prev ${classes.swiperButton} ${classes.swiperButtonPrev}`}
+					>
+						<ArrowBackIosRoundedIcon
+							className={classes.swiperButtonIcon}
+						/>
+					</div>
+					<div
+						onClick={handleNextClick}
+						onKeyDown={() => {}}
+						role="button"
+						tabIndex="0"
+						className={`swiper-button-next ${classes.swiperButton} ${classes.swiperButtonNext}`}
+					>
+						<ArrowForwardIosRoundedIcon
+							className={classes.swiperButtonIcon}
+						/>
+					</div>
+					<div className={classes.testimonialCount}>
+						{count}
+						/10
+					</div>
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

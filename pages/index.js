@@ -13,10 +13,10 @@ const useStyles = makeStyles(() => ({
 		marginTop: '30px',
 	},
 	missionContainer: {
-		marginTop: '30px',
+		marginTop: '150px',
 	},
 	projectsContainer: {
-		marginTop: '30px',
+		marginTop: '100px',
 	},
 	aboutContainer: {
 		marginTop: '100px',

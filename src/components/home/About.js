@@ -1,29 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Section from './Section';
 
 const useStyles = makeStyles(() => ({
 	aboutContainer: {
 		height: '500px',
-		maxWidth: '1200px',
 		margin: '0 auto',
-	},
-	headerContainer: {
-		textAlign: 'center',
-	},
-	header: {
-		fontSize: '1.2rem',
-		width: '150px',
-		margin: '0 auto',
-		padding: '0 0 10px 0',
-		borderBottom: '1px solid #ddd',
-	},
-	aboutDataContainer: {
 		marginTop: '50px',
 		display: 'flex',
 	},
 	aboutTextContainer: {
 		display: 'inline-block',
-		width: '624px',
+		width: '600px',
 	},
 	aboutText: {
 		margin: '10px 0',
@@ -40,11 +28,8 @@ const About = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.aboutContainer}>
-			<div className={classes.headerContainer}>
-				<Typography className={classes.header}> Company </Typography>
-			</div>
-			<div className={classes.aboutDataContainer}>
+		<Section header="Company">
+			<div className={classes.aboutContainer}>
 				<div className={classes.aboutTextContainer}>
 					<Typography>
 						Since 1990, Christian Construction has helped local
@@ -64,7 +49,7 @@ const About = () => {
 						dream come true.
 					</Typography>
 				</div>
-				<picture>
+				<picture className={classes.aboutPictureContainer}>
 					<source
 						loading="lazy"
 						className={classes.projectCoverImage}
@@ -79,7 +64,7 @@ const About = () => {
 					/>
 				</picture>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

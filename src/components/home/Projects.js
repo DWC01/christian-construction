@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ProjectCard from './ProjectCard';
+import Section from './Section';
 
 const useStyles = makeStyles(() => ({
 	headerContainer: {
@@ -47,10 +48,7 @@ const Projects = () => {
 	const classes = useStyles();
 
 	return (
-		<>
-			<div className={classes.headerContainer}>
-				<Typography className={classes.header}>Our Work</Typography>
-			</div>
+		<Section header="Our Work">
 			<div className={classes.projectCardContainer}>
 				<ProjectCard
 					className={classes.projectCard}
@@ -77,7 +75,7 @@ const Projects = () => {
 					location="Alamo, CA"
 				/>
 			</div>
-		</>
+		</Section>
 	);
 };
 

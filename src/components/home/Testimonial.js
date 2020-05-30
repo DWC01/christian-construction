@@ -81,7 +81,6 @@ const Testimonial = ({ children, clientName }) => {
 	const [expanded, setExpanded] = useState(false);
 
 	const handleExpandClick = () => {
-		console.log(expanded);
 		setExpanded(!expanded);
 	};
 
