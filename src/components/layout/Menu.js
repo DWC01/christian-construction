@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import MobileMenuIcon from './MobileMenuIcon';
+import Link from '../global/Link';
 
 const useStyles = makeStyles(theme => ({
 	list: {
@@ -35,9 +36,11 @@ const useStyles = makeStyles(theme => ({
 		marginTop: '30px',
 	},
 	menuItem: {
+		color: theme.palette.text.primary,
 		marginRight: '15px',
 		borderBottom: '1px solid transparent',
 		'&:hover': {
+			textDecoration: 'none',
 			borderBottom: '1px solid #555',
 		},
 	},
@@ -61,6 +64,16 @@ const useStyles = makeStyles(theme => ({
 			fontSize: '2rem',
 			color: theme.palette.text.primary,
 		},
+		menuItem: {
+			display: 'block',
+			color: theme.palette.text.primary,
+			marginRight: '0',
+			borderBottom: '1px solid transparent',
+			'&:hover': {
+				textDecoration: 'none',
+				borderBottom: '1px solid transparent',
+			},
+		},
 	},
 }));
 
@@ -79,6 +92,29 @@ const Menu = () => {
 		setState(!state);
 	};
 
+	const links = [
+		{
+			text: 'Home',
+			path: '/',
+		},
+		{
+			text: 'About',
+			path: '/about',
+		},
+		{
+			text: 'Portfolio',
+			path: '/portfolio',
+		},
+		{
+			text: 'Our Process',
+			path: '/our-process',
+		},
+		{
+			text: 'Contact',
+			path: '/contact',
+		},
+	];
+
 	return (
 		<>
 			<div className={classes.mobileMenuContainer}>
@@ -87,12 +123,11 @@ const Menu = () => {
 				</IconButton>
 			</div>
 			<div className={classes.menuContainer}>
-				<Typography className={classes.menuItem}>About</Typography>
-				<Typography className={classes.menuItem}>Portfolio</Typography>
-				<Typography className={classes.menuItem}>
-					Our Process
-				</Typography>
-				<Typography className={classes.menuItem}>Contact</Typography>
+				{links.map(({ text, path }) => (
+					<Link href={path} className={classes.menuItem}>
+						<Typography>{text}</Typography>
+					</Link>
+				))}
 			</div>
 			<Drawer
 				classes={{
@@ -124,8 +159,12 @@ const Menu = () => {
 					</IconButton>
 				</div>
 				<List className={classes.list}>
-					{['About', 'Portfolio', 'Our Process', 'Get Started'].map(
-						text => (
+					{links.map(({ text, path }) => (
+						<Link
+							onClick={toggleDrawer()}
+							href={path}
+							className={classes.menuItem}
+						>
 							<ListItem
 								key={text}
 								className={classes.listItem}
@@ -133,8 +172,8 @@ const Menu = () => {
 							>
 								<ListItemText primary={text} />
 							</ListItem>
-						),
-					)}
+						</Link>
+					))}
 				</List>
 			</Drawer>
 		</>
