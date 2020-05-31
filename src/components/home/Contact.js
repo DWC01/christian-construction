@@ -8,6 +8,7 @@ import CallRoundedIcon from '@material-ui/icons/CallRounded';
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 import Button from '@material-ui/core/Button';
 import { useForm } from 'react-hook-form';
+import emailRegex from '../../constants/emailRegex';
 
 const useStyles = makeStyles(theme => ({
 	headerContainer: {
@@ -139,7 +140,10 @@ const Contact = () => {
 					<div>
 						<TextField
 							name="email"
-							inputRef={register({ required: true })}
+							inputRef={register({
+								required: true,
+								pattern: emailRegex,
+							})}
 							error={!!errors.email}
 							id="contact-email"
 							className={classes.textField}
