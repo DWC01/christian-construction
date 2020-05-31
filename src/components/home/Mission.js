@@ -75,7 +75,7 @@ const Mission = () => {
 						inView ? classes.missionStatementInView : ''
 					}`}
 				>
-					Make your dream kitchen a reality.
+					Make your dream remodel a reality.
 				</Typography>
 			</div>
 		</Section>
