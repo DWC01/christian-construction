@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import colors from './colors';
 
-const { primaryLight, primary, background } = colors;
+const { primaryLight, primary, background, error } = colors;
 
 const theme = createMuiTheme({
 	typography: {
@@ -21,9 +21,9 @@ const theme = createMuiTheme({
 		// secondary: {
 		// 	main: '#19857b',
 		// },
-		// error: {
-		// 	main: red.A400,
-		// },
+		error: {
+			main: error,
+		},
 		background: {
 			default: background,
 		},

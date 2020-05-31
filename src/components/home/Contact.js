@@ -6,6 +6,8 @@ import Divider from '@material-ui/core/Divider';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CallRoundedIcon from '@material-ui/icons/CallRounded';
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
+import Button from '@material-ui/core/Button';
+import { useForm } from 'react-hook-form';
 
 const useStyles = makeStyles(theme => ({
 	headerContainer: {
@@ -48,6 +50,20 @@ const useStyles = makeStyles(theme => ({
 			borderColor: `${theme.palette.primary.main} !important`,
 		},
 	},
+	submitButtonContainer: {
+		display: 'flex',
+		justifyContent: 'center',
+		marginTop: '30px',
+	},
+	errorContainer: {
+		margin: '0px 5px 5px 15px',
+		color: theme.palette.error.main,
+	},
+	button: {
+		'&:hover': {
+			backgroundColor: theme.palette.primary.main,
+		},
+	},
 	'@media (max-width: 430px)': {
 		multilinedInput: {
 			fontSize: '16px',
@@ -65,6 +81,12 @@ const useStyles = makeStyles(theme => ({
 
 const Contact = () => {
 	const classes = useStyles();
+	const { register, handleSubmit, errors } = useForm(); // initialise the hook
+
+	const onSubmit = data => {
+		console.log(data);
+		console.log(errors);
+	};
 
 	return (
 		<>
@@ -80,9 +102,17 @@ const Contact = () => {
 				</Typography>
 			</div>
 			<Paper elevation={3} className={classes.contactFormContainer}>
-				<form className={classes.root} noValidate autoComplete="off">
+				<form
+					className={classes.root}
+					noValidate
+					autoComplete="off"
+					onSubmit={handleSubmit(onSubmit)}
+				>
 					<div>
 						<TextField
+							name="name"
+							inputRef={register({ required: true })}
+							error={!!errors.name}
 							id="contact-name"
 							className={classes.textField}
 							label="Name"
@@ -100,9 +130,17 @@ const Contact = () => {
 							}}
 							variant="outlined"
 						/>
+						{errors.name && (
+							<div className={classes.errorContainer}>
+								Name is required
+							</div>
+						)}
 					</div>
 					<div>
 						<TextField
+							name="email"
+							inputRef={register({ required: true })}
+							error={!!errors.email}
 							id="contact-email"
 							className={classes.textField}
 							label="Email"
@@ -120,9 +158,17 @@ const Contact = () => {
 							}}
 							variant="outlined"
 						/>
+						{errors.email && (
+							<div className={classes.errorContainer}>
+								Valid email required
+							</div>
+						)}
 					</div>
 					<div>
 						<TextField
+							name="message"
+							inputRef={register({ required: true })}
+							error={!!errors.message}
 							id="contact-message"
 							className={classes.textField}
 							label="Message"
@@ -142,6 +188,22 @@ const Contact = () => {
 							multiline
 							rows={4}
 						/>
+						{errors.message && (
+							<div className={classes.errorContainer}>
+								Message is required
+							</div>
+						)}
+					</div>
+					<div className={classes.submitButtonContainer}>
+						<Button
+							type="submit"
+							variant="contained"
+							color="primary"
+							className={classes.button}
+							fullWidth
+						>
+							Send Message
+						</Button>
 					</div>
 				</form>
 				<div className={classes.contactInfoContainer}>
@@ -163,7 +225,7 @@ const Contact = () => {
 					<div className={classes.contactInfo}>
 						<CallRoundedIcon className={classes.contactInfoIcon} />
 						<Typography className={classes.contactInfoText}>
-							(925) 639-9635
+							(925) 639-4567
 						</Typography>
 					</div>
 					<div className={classes.contactInfo}>

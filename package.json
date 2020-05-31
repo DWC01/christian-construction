@@ -10,6 +10,7 @@
 		"prop-types": "latest",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-hook-form": "^5.7.2",
 		"swiper": "^5.4.1"
 	},
 	"scripts": {
