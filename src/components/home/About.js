@@ -3,6 +3,22 @@ import Typography from '@material-ui/core/Typography';
 import Section from './Section';
 
 const useStyles = makeStyles(() => ({
+	leftLine: {
+		left: '10px',
+		top: '-10px',
+		width: '1px',
+		height: '105%',
+		position: 'absolute',
+		backgroundColor: 'rgba(151, 174, 255, .3)',
+	},
+	rightLine: {
+		rightt: '-10px',
+		top: '-10px',
+		width: '1px',
+		height: '105%',
+		position: 'absolute',
+		backgroundColor: 'rgba(151, 174, 255, .3)',
+	},
 	aboutContainer: {
 		margin: '0 auto',
 		marginTop: '50px',
@@ -51,7 +67,7 @@ const useStyles = makeStyles(() => ({
 const About = () => {
 	const classes = useStyles();
 	return (
-		<Section header="Company">
+		<Section header="Company" closedSection>
 			<div className={classes.aboutContainer}>
 				<div className={classes.aboutTextContainer}>
 					<Typography>

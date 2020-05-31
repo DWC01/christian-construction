@@ -87,6 +87,7 @@ const Contact = () => {
 	const onSubmit = data => {
 		console.log(data);
 		console.log(errors);
+		// https://stadtteilliebe.de/blog/serverless-contact-form
 	};
 
 	return (
@@ -177,7 +178,7 @@ const Contact = () => {
 							className={classes.textField}
 							label="Message"
 							style={{ margin: 8 }}
-							placeholder="I would love to connect about an upcoming kitchen remodel.."
+							placeholder="I would love to connect with Christian Construction about an upcoming renovation.."
 							fullWidth
 							margin="normal"
 							InputLabelProps={{

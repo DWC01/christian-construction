@@ -15,32 +15,57 @@ const useStyles = makeStyles(() => ({
 		width: 'fit-content',
 		textAlign: 'center',
 	},
+	closedSection: {
+		position: 'relative',
+		borderTop: '1px solid rgba(151, 174, 255, .3)',
+		borderBottom: '1px solid rgba(151, 174, 255, .3)',
+		padding: '25px 0',
+	},
+	closedSectionHeader: {
+		borderBottom: '1px solid transparent',
+	},
 }));
 
-const Section = ({ header, children, sectionHeaderClass }) => {
+const Section = ({
+	header,
+	children,
+	className,
+	closedSection,
+	sectionHeaderClass,
+}) => {
 	const classes = useStyles();
 
 	return (
-		<>
+		<div
+			className={`${className} ${
+				closedSection ? classes.closedSection : ''
+			}`}
+		>
 			<div className={classes.sectionHeaderContainer}>
 				<Typography
-					className={`${classes.sectionHeader} ${sectionHeaderClass}`}
+					className={`${classes.sectionHeader} 
+					${sectionHeaderClass} 
+					${closedSection ? classes.closedSectionHeader : ''}`}
 				>
 					{header}
 				</Typography>
 			</div>
 			<div>{children}</div>
-		</>
+		</div>
 	);
 };
 
 Section.defaultProps = {
+	className: '',
 	children: <div />,
+	closedSection: false,
 	sectionHeaderClass: '',
 };
 
 Section.propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.node,
+	closedSection: PropTypes.bool,
 	sectionHeaderClass: PropTypes.string,
 	header: PropTypes.string.isRequired,
 };

@@ -44,13 +44,13 @@ const Index = () => {
 					<Projects />
 				</div>
 				<div className={classes.section}>
-					<About />
-				</div>
-				<div className={classes.section}>
 					<LatestAchievements />
 				</div>
 				<div className={classes.section}>
 					<Testimonials />
+				</div>
+				<div className={classes.section}>
+					<About />
 				</div>
 				<div className={classes.section}>
 					<Contact />
