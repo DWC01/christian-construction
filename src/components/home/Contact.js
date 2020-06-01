@@ -9,6 +9,7 @@ import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 import Button from '@material-ui/core/Button';
 import { useForm } from 'react-hook-form';
 import emailRegex from '../../constants/emailRegex';
+import sendContactLeadMail from '../api/contantLead';
 
 const useStyles = makeStyles(theme => ({
 	headerContainer: {
@@ -84,10 +85,12 @@ const Contact = () => {
 	const classes = useStyles();
 	const { register, handleSubmit, errors } = useForm(); // initialise the hook
 
-	const onSubmit = data => {
-		console.log(data);
-		console.log(errors);
-		// https://stadtteilliebe.de/blog/serverless-contact-form
+	const onSubmit = ({ name, email, message }) => {
+		sendContactLeadMail({
+			name,
+			email,
+			message,
+		});
 	};
 
 	return (

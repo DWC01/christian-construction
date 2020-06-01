@@ -88,7 +88,7 @@ const About = () => {
 						dream come true.
 					</Typography>
 				</div>
-				<picture className={classes.aboutPictureContainer}>
+				{/* <picture className={classes.aboutPictureContainer}>
 					<source
 						type="image/webp"
 						loading="lazy"
@@ -102,7 +102,7 @@ const About = () => {
 						src="/home/profile-photo.jpg"
 						alt="profile"
 					/>
-				</picture>
+				</picture> */}
 			</div>
 		</Section>
 	);
