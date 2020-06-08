@@ -4,10 +4,10 @@ import to from 'await-to-js';
 const config = {
 	service: 'Gmail',
 	type: 'OAuth2',
-	user: process.env.MAILER_USER,
-	clientId: process.env.MAILER_CLIENT_ID,
-	clientSecret: process.env.MAILER_CLIENT_SECRET,
-	refreshToken: process.env.MAILER_REFRESH_TOKEN,
+	user: process.env.GMAIL_ADDRESS,
+	clientId: process.env.GMAIL_CLIENT_ID,
+	clientSecret: process.env.GMAIL_CLIENT_SECRET,
+	refreshToken: process.env.GMAIL_REFRESH_TOKEN,
 };
 
 const smtpTransport = nodemailer.createTransport({
