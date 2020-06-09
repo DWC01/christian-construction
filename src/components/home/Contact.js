@@ -101,7 +101,7 @@ const Contact = () => {
 	const onSubmit = async ({ name, email, message }) => {
 		setSendingMessage(true);
 
-		await to(
+		const [error, response] = await to(
 			sendContactLeadMail({
 				name,
 				email,
@@ -109,7 +109,13 @@ const Contact = () => {
 			}),
 		);
 
-		setMessageSent(true);
+		if (error) {
+			console.error(error);
+		}
+
+		if (response) {
+			setMessageSent(true);
+		}
 	};
 
 	return (
