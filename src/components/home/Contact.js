@@ -1,3 +1,5 @@
+import to from 'await-to-js';
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -66,6 +68,15 @@ const useStyles = makeStyles(theme => ({
 			backgroundColor: theme.palette.primary.main,
 		},
 	},
+	messageSentContainer: {
+		textAlign: 'center',
+		fontSize: '1.5rem',
+		color: theme.palette.primary.main,
+	},
+	messageSentMessageContainer: {
+		marginBottom: '10px',
+		fontSize: '1.3rem',
+	},
 	'@media (max-width: 430px)': {
 		multilinedInput: {
 			fontSize: '16px',
@@ -83,14 +94,22 @@ const useStyles = makeStyles(theme => ({
 
 const Contact = () => {
 	const classes = useStyles();
-	const { register, handleSubmit, errors } = useForm(); // initialise the hook
+	const { register, handleSubmit, errors } = useForm();
+	const [sendingMessage, setSendingMessage] = useState(false);
+	const [messageSent, setMessageSent] = useState(false);
 
-	const onSubmit = ({ name, email, message }) => {
-		sendContactLeadMail({
-			name,
-			email,
-			message,
-		});
+	const onSubmit = async ({ name, email, message }) => {
+		setSendingMessage(true);
+
+		await to(
+			sendContactLeadMail({
+				name,
+				email,
+				message,
+			}),
+		);
+
+		setMessageSent(true);
 	};
 
 	return (
@@ -107,113 +126,147 @@ const Contact = () => {
 				</Typography>
 			</div>
 			<Paper elevation={3} className={classes.contactFormContainer}>
-				<form
-					className={classes.root}
-					noValidate
-					autoComplete="off"
-					onSubmit={handleSubmit(onSubmit)}
-				>
-					<div>
-						<TextField
-							name="name"
-							inputRef={register({ required: true })}
-							error={!!errors.name}
-							id="contact-name"
-							className={classes.textField}
-							label="Name"
-							style={{ margin: 8 }}
-							placeholder="Lisa Smith"
-							fullWidth
-							margin="normal"
-							InputLabelProps={{
-								shrink: true,
-							}}
-							InputProps={{
-								classes: {
-									root: classes.multilinedInput,
-								},
-							}}
-							variant="outlined"
-						/>
-						{errors.name && (
-							<div className={classes.errorContainer}>
-								Name is required
-							</div>
-						)}
-					</div>
-					<div>
-						<TextField
-							name="email"
-							inputRef={register({
-								required: true,
-								pattern: emailRegex,
-							})}
-							error={!!errors.email}
-							id="contact-email"
-							className={classes.textField}
-							label="Email"
-							style={{ margin: 8 }}
-							placeholder="lisa.smith@gmail.com"
-							fullWidth
-							margin="normal"
-							InputLabelProps={{
-								shrink: true,
-							}}
-							InputProps={{
-								classes: {
-									root: classes.multilinedInput,
-								},
-							}}
-							variant="outlined"
-						/>
-						{errors.email && (
-							<div className={classes.errorContainer}>
-								Valid email required
-							</div>
-						)}
-					</div>
-					<div>
-						<TextField
-							name="message"
-							inputRef={register({ required: true })}
-							error={!!errors.message}
-							id="contact-message"
-							className={classes.textField}
-							label="Message"
-							style={{ margin: 8 }}
-							placeholder="I would love to connect with Christian Construction about an upcoming renovation.."
-							fullWidth
-							margin="normal"
-							InputLabelProps={{
-								shrink: true,
-							}}
-							InputProps={{
-								classes: {
-									root: classes.multilinedInput,
-								},
-							}}
-							variant="outlined"
-							multiline
-							rows={4}
-						/>
-						{errors.message && (
-							<div className={classes.errorContainer}>
-								Message is required
-							</div>
-						)}
-					</div>
-					<div className={classes.submitButtonContainer}>
-						<Button
-							type="submit"
-							variant="contained"
-							color="primary"
-							className={classes.button}
-							fullWidth
+				{messageSent ? (
+					<div className={classes.messageSentContainer}>
+						<Typography
+							className={classes.messageSentMessageContainer}
 						>
-							Send Message
-						</Button>
+							Message sent!
+						</Typography>
+						<Typography
+							className={classes.messageSentMessageContainer}
+						>
+							We'll be in contact within 24 hours.
+						</Typography>
+						<Typography
+							className={classes.messageSentMessageContainer}
+						>
+							Want to chat sooner? Give us a call now at
+							925-639-4567.
+						</Typography>
 					</div>
-				</form>
+				) : (
+					<form
+						className={classes.root}
+						noValidate
+						autoComplete="off"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<div>
+							<TextField
+								name="name"
+								inputRef={register({ required: true })}
+								error={!!errors.name}
+								id="contact-name"
+								className={classes.textField}
+								label="Name"
+								style={{ margin: 8 }}
+								placeholder="Lisa Smith"
+								fullWidth
+								margin="normal"
+								InputLabelProps={{
+									shrink: true,
+								}}
+								InputProps={{
+									classes: {
+										root: classes.multilinedInput,
+									},
+								}}
+								variant="outlined"
+							/>
+							{errors.name && (
+								<div className={classes.errorContainer}>
+									Name is required
+								</div>
+							)}
+						</div>
+						<div>
+							<TextField
+								name="email"
+								inputRef={register({
+									required: true,
+									pattern: emailRegex,
+								})}
+								error={!!errors.email}
+								id="contact-email"
+								className={classes.textField}
+								label="Email"
+								style={{ margin: 8 }}
+								placeholder="lisa.smith@gmail.com"
+								fullWidth
+								margin="normal"
+								InputLabelProps={{
+									shrink: true,
+								}}
+								InputProps={{
+									classes: {
+										root: classes.multilinedInput,
+									},
+								}}
+								variant="outlined"
+							/>
+							{errors.email && (
+								<div className={classes.errorContainer}>
+									Valid email required
+								</div>
+							)}
+						</div>
+						<div>
+							<TextField
+								name="message"
+								inputRef={register({ required: true })}
+								error={!!errors.message}
+								id="contact-message"
+								className={classes.textField}
+								label="Message"
+								style={{ margin: 8 }}
+								placeholder="I would love to connect with Christian Construction about an upcoming renovation.."
+								fullWidth
+								margin="normal"
+								InputLabelProps={{
+									shrink: true,
+								}}
+								InputProps={{
+									classes: {
+										root: classes.multilinedInput,
+									},
+								}}
+								variant="outlined"
+								multiline
+								rows={4}
+							/>
+							{errors.message && (
+								<div className={classes.errorContainer}>
+									Message is required
+								</div>
+							)}
+						</div>
+						<div className={classes.submitButtonContainer}>
+							{sendingMessage ? (
+								<Button
+									type="submit"
+									variant="contained"
+									color="primary"
+									className={classes.button}
+									fullWidth
+									disabled
+								>
+									Sending...
+								</Button>
+							) : (
+								<Button
+									type="submit"
+									variant="contained"
+									color="primary"
+									className={classes.button}
+									fullWidth
+								>
+									Send Message
+								</Button>
+							)}
+						</div>
+					</form>
+				)}
 				<div className={classes.contactInfoContainer}>
 					<Divider />
 					<div className={classes.contactInfoHeader}>
