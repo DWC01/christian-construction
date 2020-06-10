@@ -54,7 +54,7 @@ const Projects = () => {
 					className={classes.projectCard}
 					imgSrc="/home/latchford-cover.webp"
 					backupImgSrc="/home/latchford-cover.jpg"
-					description="Cedar white cabinets and white tile backsplash"
+					description="Honey stained shaker style cabinets and granite countertops"
 					title="Kitchen Remodel"
 					location="Lafayette, CA"
 				/>
@@ -62,7 +62,7 @@ const Projects = () => {
 					className={classes.projectCard}
 					imgSrc="/home/roundhill-cover.webp"
 					backupImgSrc="/home/roundhill-cover.jpg"
-					description="Cedar white cabinets and white tile backsplash"
+					description="Shaker style white cabinets and white quartz countertops"
 					title="Kitchen Remodel"
 					location="Alamo, CA"
 				/>

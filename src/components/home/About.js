@@ -73,7 +73,7 @@ const About = () => {
 					<Typography>
 						Since 1990, Christian Construction has helped local
 						homeowners make their remodeling dreams a reality. Our
-						detailed craftsmenship and personal attention to each
+						detailed craftsmanship and personal attention to each
 						project ensures that every customer is 100% satisfied.
 						As the owner, Wayne Christian personally oversees every
 						job from start to finish.
