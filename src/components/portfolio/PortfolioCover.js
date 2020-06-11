@@ -3,18 +3,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '../global/Link';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
 	portfolioCoverContainer: {
 		position: 'relative',
-		maxWidth: '50%',
 		display: 'inline-block',
 		padding: '5px',
+		overflow: 'hidden',
+		cursor: 'pointer',
 	},
 	portfolioCoverImage: {
 		maxWidth: '100%',
 		justifyContent: 'center',
 	},
-	linkBox: {
+	linkBoxText: {
 		position: 'absolute',
 		top: '50%',
 		left: '50%',
@@ -26,16 +27,16 @@ const useStyles = makeStyles(theme => ({
 			textDecoration: 'none',
 			backgroundColor: 'rgba(250, 250, 250, .5)',
 		},
+		color: '#fff',
+		fontWeight: '500',
+		fontSize: '1rem',
 		'&:focus': {
 			color: '#fff',
 		},
 	},
-	linkBoxText: {
-		color: '#fff',
-		fontWeight: '400',
-		fontSize: '1.3rem',
-		'&:focus': {
-			color: '#fff',
+	'@media (max-width: 750px)': {
+		linkBoxText: {
+			fontWeight: '400',
 		},
 	},
 }));
@@ -45,31 +46,31 @@ const PortfolioCover = ({ className, projectName, imgSrc, backupImgSrc }) => {
 
 	return (
 		<div className={`${className} ${classes.portfolioCoverContainer}`}>
-			<Link href="/" className={classes.linkBox}>
+			<Link href="/">
 				<Typography className={classes.linkBoxText}>
 					{projectName}
 				</Typography>
+				<picture>
+					<source
+						type="image/webp"
+						media="(min-width:430px)"
+						className={classes.portfolioCoverImage}
+						srcSet={imgSrc}
+						alt="portfolio-cover"
+					/>
+					<source
+						type="image/webp"
+						className={classes.portfolioCoverImage}
+						srcSet={imgSrc}
+						alt="portfolio-cover"
+					/>
+					<img
+						className={classes.portfolioCoverImage}
+						src={backupImgSrc}
+						alt="portfolio-cover"
+					/>
+				</picture>
 			</Link>
-			<picture>
-				<source
-					type="image/webp"
-					media="(min-width:430px)"
-					className={classes.portfolioCoverImage}
-					srcSet={imgSrc}
-					alt="portfolio-cover"
-				/>
-				<source
-					type="image/webp"
-					className={classes.portfolioCoverImage}
-					srcSet={imgSrc}
-					alt="portfolio-cover"
-				/>
-				<img
-					className={classes.portfolioCoverImage}
-					src={backupImgSrc}
-					alt="portfolio-cover"
-				/>
-			</picture>
 		</div>
 	);
 };
