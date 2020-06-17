@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Link from '../global/Link';
 
 const useStyles = makeStyles(() => ({
 	portfolioCoverContainer: {
@@ -41,42 +39,31 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const PortfolioCover = ({
-	imgSrc,
-	linkPath,
-	className,
-	projectName,
-	backupImgSrc,
-}) => {
+const PortfolioCover = ({ className, imgSrc, backupImgSrc }) => {
 	const classes = useStyles();
 
 	return (
 		<div className={`${className} ${classes.portfolioCoverContainer}`}>
-			<Link href={linkPath}>
-				<Typography className={classes.linkBoxText}>
-					{projectName}
-				</Typography>
-				<picture>
-					<source
-						type="image/webp"
-						media="(min-width:430px)"
-						className={classes.portfolioCoverImage}
-						srcSet={imgSrc}
-						alt="portfolio-cover"
-					/>
-					<source
-						type="image/webp"
-						className={classes.portfolioCoverImage}
-						srcSet={imgSrc}
-						alt="portfolio-cover"
-					/>
-					<img
-						className={classes.portfolioCoverImage}
-						src={backupImgSrc}
-						alt="portfolio-cover"
-					/>
-				</picture>
-			</Link>
+			<picture>
+				<source
+					type="image/webp"
+					media="(min-width:430px)"
+					className={classes.portfolioCoverImage}
+					srcSet={imgSrc}
+					alt="portfolio-img"
+				/>
+				<source
+					type="image/webp"
+					className={classes.portfolioCoverImage}
+					srcSet={imgSrc}
+					alt="portfolio-img"
+				/>
+				<img
+					className={classes.portfolioCoverImage}
+					src={backupImgSrc}
+					alt="portfolio-img"
+				/>
+			</picture>
 		</div>
 	);
 };
@@ -88,8 +75,6 @@ PortfolioCover.defaultProps = {
 PortfolioCover.propTypes = {
 	className: PropTypes.string,
 	imgSrc: PropTypes.string.isRequired,
-	linkPath: PropTypes.string.isRequired,
-	projectName: PropTypes.string.isRequired,
 	backupImgSrc: PropTypes.string.isRequired,
 };
 

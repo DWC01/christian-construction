@@ -1,5 +1,5 @@
 const OurProcess = () => {
-	return <>OurProcess</>;
+	return <>Coming Soon..</>;
 };
 
 export default OurProcess;

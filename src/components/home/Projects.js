@@ -51,14 +51,16 @@ const Projects = () => {
 		<Section header="Our Work">
 			<div className={classes.projectCardContainer}>
 				<ProjectCard
+					linkPath="/portfolio"
 					className={classes.projectCard}
-					imgSrc="/home/latchford-cover.webp"
-					backupImgSrc="/home/latchford-cover.jpg"
-					description="Honey stained shaker style cabinets and granite countertops"
+					imgSrc="/home/andrews-cover.webp"
+					backupImgSrc="/home/andrews-cover.jpg"
+					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
-					location="Lafayette, CA"
+					location="Alamo, CA"
 				/>
 				<ProjectCard
+					linkPath="/portfolio/roundhill"
 					className={classes.projectCard}
 					imgSrc="/home/roundhill-cover.webp"
 					backupImgSrc="/home/roundhill-cover.jpg"
@@ -67,12 +69,13 @@ const Projects = () => {
 					location="Alamo, CA"
 				/>
 				<ProjectCard
+					linkPath="/portfolio/latchfords"
 					className={classes.projectCard}
-					imgSrc="/home/andrews-cover.webp"
-					backupImgSrc="/home/andrews-cover.jpg"
-					description="Cedar white cabinets and white tile backsplash"
+					imgSrc="/home/latchford-cover.webp"
+					backupImgSrc="/home/latchford-cover.jpg"
+					description="Honey stained shaker style cabinets and granite countertops"
 					title="Kitchen Remodel"
-					location="Alamo, CA"
+					location="Lafayette, CA"
 				/>
 			</div>
 		</Section>

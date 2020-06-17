@@ -86,8 +86,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProjectCard = ({
-	imgSrc,
 	title,
+	imgSrc,
+	linkPath,
 	location,
 	className,
 	description,
@@ -104,7 +105,7 @@ const ProjectCard = ({
 			}}
 			elevation={2}
 		>
-			<Link href="/" className={classes.link}>
+			<Link href={linkPath} className={classes.link}>
 				<picture>
 					<source
 						type="image/webp"
@@ -152,6 +153,7 @@ ProjectCard.propTypes = {
 	title: PropTypes.string.isRequired,
 	imgSrc: PropTypes.string.isRequired,
 	location: PropTypes.string.isRequired,
+	linkPath: PropTypes.string.isRequired,
 	description: PropTypes.string.isRequired,
 	backupImgSrc: PropTypes.string.isRequired,
 };

@@ -1,5 +1,5 @@
 const About = () => {
-	return <>About</>;
+	return <>Coming Soon..</>;
 };
 
 export default About;
