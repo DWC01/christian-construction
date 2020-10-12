@@ -16,6 +16,9 @@ const useStyles = makeStyles(() => ({
 		display: 'none',
 	},
 	'@media (max-width: 750px)': {
+		porfoioCoversContainer: {
+			padding: '0 5px',
+		},
 		porfoioCoversColumn: {
 			display: 'none',
 		},

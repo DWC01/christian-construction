@@ -63,10 +63,11 @@ const About = () => {
 				<Typography className={classes.aboutText}>
 					We listen to our clients. We make note of all of the things
 					that are important to you no matter how small the detail.
-					We've heard many times from our past homeowners that it was
-					the small things we did that made the job go so smoothly. We
-					will do everything we can to gain your confidence, so you
-					can sit back and enjoy watching your dream come true.
+					We`&rsquo;`ve heard many times from our past homeowners that
+					it was the small things we did that made the job go so
+					smoothly. We will do everything we can to gain your
+					confidence, so you can sit back and enjoy watching your
+					dream come true.
 				</Typography>
 			</div>
 			{/* <picture className={classes.aboutPictureContainer}>

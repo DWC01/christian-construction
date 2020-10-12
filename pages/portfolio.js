@@ -16,6 +16,9 @@ const useStyles = makeStyles(() => ({
 		display: 'none',
 	},
 	'@media (max-width: 750px)': {
+		porfoioCoversContainer: {
+			padding: '0 5px',
+		},
 		porfoioCoversColumn: {
 			display: 'none',
 		},
@@ -73,31 +76,31 @@ const Portfolio = () => {
 			</div>
 			<div className={classes.porfoioCoversColumnMobile}>
 				<PortfolioCover
+					linkPath="/portfolio/alamo"
+					projectName="Alamo"
+					imgSrc="/portfolio/covers/alamo-kitchen-hero-close.webp"
+					backupImgSrc="/portfolio/covers/alamo-kitchen-hero-close.jpg"
+				/>
+				<PortfolioCover
 					linkPath="/portfolio/roundhill"
 					projectName="Roundhill"
 					imgSrc="/portfolio/covers/roundhill.webp"
 					backupImgSrc="/portfolio/covers/roundhill.jpg"
 				/>
 				<PortfolioCover
-					linkPath="/portfolio/roundhill"
+					linkPath="/portfolio/latchfords"
 					projectName="Latchfords"
 					imgSrc="/portfolio/covers/latchford-long-frontside.webp"
 					backupImgSrc="/portfolio/covers/latchford-long-frontside.jpg"
 				/>
 				<PortfolioCover
-					linkPath="/portfolio/roundhill"
+					linkPath="/portfolio"
 					projectName="Kohler"
 					imgSrc="/portfolio/covers/kohler.webp"
 					backupImgSrc="/portfolio/covers/kohler.jpg"
 				/>
 				<PortfolioCover
-					linkPath="/portfolio/roundhill"
-					projectName="Cohen"
-					imgSrc="/portfolio/covers/cohen.webp"
-					backupImgSrc="/portfolio/covers/cohen.jpg"
-				/>
-				<PortfolioCover
-					linkPath="/portfolio/roundhill"
+					linkPath="/portfolio"
 					projectName="Farmhouse"
 					imgSrc="/portfolio/covers/farmhouse.webp"
 					backupImgSrc="/portfolio/covers/farmhouse.jpg"
