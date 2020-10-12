@@ -51,10 +51,10 @@ const Projects = () => {
 		<Section header="Our Work">
 			<div className={classes.projectCardContainer}>
 				<ProjectCard
-					linkPath="/portfolio"
+					linkPath="/portfolio/alamo"
 					className={classes.projectCard}
-					imgSrc="/home/andrews-cover.webp"
-					backupImgSrc="/home/andrews-cover.jpg"
+					imgSrc="/home/alamo-cover.webp"
+					backupImgSrc="/home/alamo-cover.jpg"
 					description="Cedar white cabinets and white tile backsplash"
 					title="Kitchen Remodel"
 					location="Alamo, CA"
